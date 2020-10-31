@@ -1,2 +1,15 @@
-# tableau_public_api
-Documentation relating to the Tableau Public API
+Tableau Public API Documentation
+
+About
+This repo for documentation on Tableau Public's API 
+
+Known API calls:
+- profile
+- workbooks
+- followers
+- following 
+- favourites
+- workbook image
+- workbook thumbnail
+
+
