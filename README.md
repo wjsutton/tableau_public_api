@@ -17,13 +17,13 @@ Quick Link
 [GitHub]:https://github.com/wjsutton
 [Website]:https://wjsutton.github.io/
 
-## :a: About
+### :a: About
 
 Tableau Public is the free version of Tableau's Desktop product, it allows for the creation and distribution of Tableau dashboards. The Tableau Public platform has an API for handling data relating to user profiles and workbooks (dashboards). This API can be accessed via a web browser or a programming language (R, Python, JavaScript).
 
 Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauPublicAPI.html) & Marc Reid's [blog post](https://datavis.blog/2019/05/13/tableau-public-api/) for sharing this information that acting as the starting point for this documentation.
 
-## :inbox_tray: Known API calls
+### :inbox_tray: Known API calls
 - [Profile](https://github.com/wjsutton/tableau_public_api#profile)
 - [Workbooks](https://github.com/wjsutton/tableau_public_api#workbooks)
 - [Followers](https://github.com/wjsutton/tableau_public_api#followers)
@@ -32,7 +32,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 - [Workbook Image](https://github.com/wjsutton/tableau_public_api#workbook-image)
 - [Workbook Thumbnail](https://github.com/wjsutton/tableau_public_api#workbook-thumbnail)
 
-## :bust_in_silhouette: Profile
+### :bust_in_silhouette: Profile
 
 **API call output**
 <br>Retrieve basic counts of a workbooks, followers, following, favourites, details of websites, social media links and the last 30 workbooks associated to a Tableau Public username. Returned as a JSON.
@@ -43,7 +43,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 **Example API call**
 <br>[https://public.tableau.com/profile/api/will7508](https://public.tableau.com/profile/api/will7508)
 
-## :books: Workbooks
+### :books: Workbooks
 
 **API call output**
 <br>Retrieves details of the last 300 workbooks associated to a Tableau Public username. Note that the next 300 workbooks can be retrieved by changing index section to `index=1` or `index=2`, `index=3`, etc. Returned as a JSON.
@@ -55,7 +55,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 **Example API call**
 <br>[https://public.tableau.com/profile/api/will7508/workbooks?count=300&index=0](https://public.tableau.com/profile/api/will7508/workbooks?count=300&index=0)
 
-## :busts_in_silhouette: Followers
+### :busts_in_silhouette: Followers
 
 **API call output**
 <br>
@@ -66,7 +66,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 **Example API call**
 <br>[https://public.tableau.com/profile/api/followers/will7508?count=300&index=0](https://public.tableau.com/profile/api/followers/will7508?count=300&index=0)
 
-## :busts_in_silhouette: Following
+### :busts_in_silhouette: Following
 
 **API call output**
 <br>
@@ -77,7 +77,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 **Example API call**
 <br>[https://public.tableau.com/profile/api/following/will7508?count=300&index=0](https://public.tableau.com/profile/api/following/will7508?count=300&index=0)
 
-## :star: Favourites
+### :star: Favourites
 
 **API call output**
 <br>
@@ -88,7 +88,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 **Example API call**
 <br>[https://public.tableau.com/profile/api/favorite/will7508/workbook?](https://public.tableau.com/profile/api/favorite/will7508/workbook?)
 
-## :chart_with_upwards_trend: Workbook Image
+### :chart_with_upwards_trend: Workbook Image
 
 **API call output**
 <br>
@@ -99,7 +99,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 **Example API call**
 <br>[https://public.tableau.com/static/images/Ru/RunningforOlympicGold/RunningforOlympicGold/1.png](https://public.tableau.com/static/images/Ru/RunningforOlympicGold/RunningforOlympicGold/1.png)
 
-## :chart_with_upwards_trend: Workbook Thumbnail
+### :chart_with_upwards_trend: Workbook Thumbnail
 
 **API call output**
 <br>
