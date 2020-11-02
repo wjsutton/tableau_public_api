@@ -82,7 +82,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 ### :star: Favourites
 
 **API call output**
-<br>
+<br>Returns a list of workbookRepoUrls favourited by a Tableau Public User, in JSON format.
 
 **API call format**
 <br>https://public.tableau.com/profile/api/favorite/ + **Tableau Public Username** + /workbook?
@@ -93,7 +93,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 ### :chart_with_upwards_trend: Workbook Image
 
 **API call output**
-<br>
+<br>Returns a screenshot image of the entire dashboard.
 
 **API call format**
 <br>https://public.tableau.com/static/images/ + **First 2 Letters of Workbook Repo Url** + / + **Workbook Repo Url** + / + **Default View Name (Excluding spaces & fullstops)** + /1.png
@@ -104,7 +104,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 ### :chart_with_upwards_trend: Workbook Thumbnail
 
 **API call output**
-<br>
+<br>Returns a thumbnail sized image, typically found on a Tableau Public author's page.
 
 **API call format**
 <br>https://public.tableau.com/thumb/views/ + **Workbook Repo Url** + / + **Default View Name (Excluding spaces & fullstops)** 
