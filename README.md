@@ -35,7 +35,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 ### :bust_in_silhouette: Profile
 
 **API call output**
-<br>Retrieve basic counts of a workbooks, followers, following, favourites, details of websites, social media links and the last 21 workbooks associated to a Tableau Public username. Returned as a JSON.
+<br>Retrieve basic counts of workbooks, followers, following, favourites, details of websites, social media links and the last 21 workbooks associated to a Tableau Public username. Returned as a JSON.
 
 **API call format**
 <br>https://public.tableau.com/profile/api/ + **Tableau Public Username** 
@@ -46,7 +46,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 ### :books: Workbooks
 
 **API call output**
-<br>Retrieves details of the last 300 workbooks associated to a Tableau Public username. Note that the next 300 workbooks can be retrieved by changing index section to `index=1` or `index=2`, `index=3`, etc. Returned as a JSON.
+<br>Retrieves details of the last 300 workbooks associated to a Tableau Public username. Note that the next 300 workbooks can be retrieved by changing the index section to `index=1` or `index=2`, `index=3`, etc. Returned as a JSON.
 
 **API call format**
 <br>First 300 workbooks: https://public.tableau.com/profile/api/ + **Tableau Public Username** + /workbooks?count=300&index=0
@@ -58,7 +58,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 ### :busts_in_silhouette: Followers
 
 **API call output**
-<br>Retrieves a list of followers for a Tableau Public User, returns usernames, user meta data, details of latest workbook. Note that the count of accounts appears to be unlimited, i.e. `count=300` will return up to 300 accounts, `count=1000` will return up to 1,000 accounts.
+<br>Retrieves a list of followers for a Tableau Public User, returns usernames, user metadata, details of their latest workbook. Note that the count of accounts appears to be unlimited, i.e. `count=300` will return up to 300 accounts, `count=1000` will return up to 1,000 accounts.
 
 **API call format**
 <br>Get 300 followers: https://public.tableau.com/profile/api/followers/ + **Tableau Public Username** + ?count=300&index=0
@@ -70,7 +70,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 ### :busts_in_silhouette: Following
 
 **API call output**
-<br>Retrieves a list of accounts being followed by a Tableau Public User, returns usernames, user meta data, details of latest workbook. Note that the count of accounts appears to be unlimited, i.e. `count=300` will return up to 300 accounts, `count=1000` will return up to 1,000 accounts.
+<br>Retrieves a list of accounts being followed by a Tableau Public User, returns usernames, user metadata, details of their latest workbook. Note that the count of accounts appears to be unlimited, i.e. `count=300` will return up to 300 accounts, `count=1000` will return up to 1,000 accounts.
 
 **API call format**
 <br>Get 300 following: https://public.tableau.com/profile/api/following/ + **Tableau Public Username** + ?count=300&index=0
@@ -104,7 +104,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 ### :chart_with_upwards_trend: Workbook Thumbnail
 
 **API call output**
-<br>Returns a thumbnail sized image, typically found on a Tableau Public author's page.
+<br>Returns a thumbnail-sized image, typically found on a Tableau Public author's page.
 
 **API call format**
 <br>https://public.tableau.com/thumb/views/ + **Workbook Repo Url** + / + **Default View Name (Excluding spaces & fullstops)** 
