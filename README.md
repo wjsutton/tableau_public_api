@@ -24,13 +24,13 @@ Tableau Public is the free version of Tableau's Desktop product, it allows for t
 Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauPublicAPI.html) & Marc Reid's [blog post](https://datavis.blog/2019/05/13/tableau-public-api/) for sharing this information that acting as the starting point for this documentation.
 
 ### :inbox_tray: Known API calls
-- [Profile](https://github.com/wjsutton/tableau_public_api#profile)
-- [Workbooks](https://github.com/wjsutton/tableau_public_api#workbooks)
-- [Followers](https://github.com/wjsutton/tableau_public_api#followers)
-- [Following](https://github.com/wjsutton/tableau_public_api#following)
-- [Favourites](https://github.com/wjsutton/tableau_public_api#favourites)
-- [Workbook Image](https://github.com/wjsutton/tableau_public_api#workbook-image)
-- [Workbook Thumbnail](https://github.com/wjsutton/tableau_public_api#workbook-thumbnail)
+- [Profile](https://github.com/wjsutton/tableau_public_api#user-content-bust_in_silhouette-profile)
+- [Workbooks](https://github.com/wjsutton/tableau_public_api#user-content-books-workbooks)
+- [Followers](https://github.com/wjsutton/tableau_public_api#user-content-busts_in_silhouette-followers)
+- [Following](https://github.com/wjsutton/tableau_public_api#user-content-busts_in_silhouette-following)
+- [Favourites](https://github.com/wjsutton/tableau_public_api#user-content-star-favourites)
+- [Workbook Image](https://github.com/wjsutton/tableau_public_api#user-content-chart_with_upwards_trend-workbook-image)
+- [Workbook Thumbnail](https://github.com/wjsutton/tableau_public_api#user-content-chart_with_upwards_trend-workbook-thumbnail)
 
 ### :bust_in_silhouette: Profile
 
