@@ -35,7 +35,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 ### :bust_in_silhouette: Profile
 
 **API call output**
-<br>Retrieve basic counts of a workbooks, followers, following, favourites, details of websites, social media links and the last 30 workbooks associated to a Tableau Public username. Returned as a JSON.
+<br>Retrieve basic counts of a workbooks, followers, following, favourites, details of websites, social media links and the last 21 workbooks associated to a Tableau Public username. Returned as a JSON.
 
 **API call format**
 <br>https://public.tableau.com/profile/api/ + **Tableau Public Username** 
@@ -58,10 +58,11 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 ### :busts_in_silhouette: Followers
 
 **API call output**
-<br>
+<br>Retrieves a list of followers for a Tableau Public User, returns usernames, user meta data, details of latest workbook. Note that the count of accounts appears to be unlimited, i.e. `count=300` will return up to 300 accounts, `count=1000` will return up to 1,000 accounts.
 
 **API call format**
-<br>https://public.tableau.com/profile/api/followers/ + **Tableau Public Username** + ?count=300&index=0
+<br>Get 300 followers: https://public.tableau.com/profile/api/followers/ + **Tableau Public Username** + ?count=300&index=0
+<br>Get 1,000 followers: https://public.tableau.com/profile/api/followers/ + **Tableau Public Username** + ?count=1000&index=0
 
 **Example API call**
 <br>[https://public.tableau.com/profile/api/followers/will7508?count=300&index=0](https://public.tableau.com/profile/api/followers/will7508?count=300&index=0)
@@ -69,10 +70,11 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 ### :busts_in_silhouette: Following
 
 **API call output**
-<br>
+<br>Retrieves a list of accounts being followed by a Tableau Public User, returns usernames, user meta data, details of latest workbook. Note that the count of accounts appears to be unlimited, i.e. `count=300` will return up to 300 accounts, `count=1000` will return up to 1,000 accounts.
 
 **API call format**
-<br>https://public.tableau.com/profile/api/following/ + **Tableau Public Username** + ?count=300&index=0
+<br>Get 300 following: https://public.tableau.com/profile/api/following/ + **Tableau Public Username** + ?count=300&index=0
+<br>Get 1,000 following: https://public.tableau.com/profile/api/following/ + **Tableau Public Username** + ?count=1000&index=0
 
 **Example API call**
 <br>[https://public.tableau.com/profile/api/following/will7508?count=300&index=0](https://public.tableau.com/profile/api/following/will7508?count=300&index=0)
