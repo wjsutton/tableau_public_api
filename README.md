@@ -29,8 +29,11 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 - [Followers](https://github.com/wjsutton/tableau_public_api#user-content-busts_in_silhouette-followers)
 - [Following](https://github.com/wjsutton/tableau_public_api#user-content-busts_in_silhouette-following)
 - [Favourites](https://github.com/wjsutton/tableau_public_api#user-content-star-favourites)
-- [Workbook Image](https://github.com/wjsutton/tableau_public_api#user-content-chart_with_upwards_trend-workbook-image)
+- [Workbook Image](https://github.com/wjsutton/tableau_public_api#user-content-books-workbook-image)
 - [Workbook Thumbnail](https://github.com/wjsutton/tableau_public_api#user-content-chart_with_upwards_trend-workbook-thumbnail)
+- [Featured Authors](https://github.com/wjsutton/tableau_public_api#user-content-notebook-featured-authors)
+- [VOTD Dashboards](https://github.com/wjsutton/tableau_public_api#user-content-chart_with_upwards_trend-votd-dashboards)
+
 
 ### :bust_in_silhouette: Profile
 
@@ -42,6 +45,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 
 **Example API call**
 <br>[https://public.tableau.com/profile/api/will7508](https://public.tableau.com/profile/api/will7508)
+
 
 ### :books: Workbooks
 
@@ -55,6 +59,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 **Example API call**
 <br>[https://public.tableau.com/profile/api/will7508/workbooks?count=300&index=0](https://public.tableau.com/profile/api/will7508/workbooks?count=300&index=0)
 
+
 ### :busts_in_silhouette: Followers
 
 **API call output**
@@ -66,6 +71,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 
 **Example API call**
 <br>[https://public.tableau.com/profile/api/followers/will7508?count=300&index=0](https://public.tableau.com/profile/api/followers/will7508?count=300&index=0)
+
 
 ### :busts_in_silhouette: Following
 
@@ -79,6 +85,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 **Example API call**
 <br>[https://public.tableau.com/profile/api/following/will7508?count=300&index=0](https://public.tableau.com/profile/api/following/will7508?count=300&index=0)
 
+
 ### :star: Favourites
 
 **API call output**
@@ -90,7 +97,8 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 **Example API call**
 <br>[https://public.tableau.com/profile/api/favorite/will7508/workbook?](https://public.tableau.com/profile/api/favorite/will7508/workbook?)
 
-### :chart_with_upwards_trend: Workbook Image
+
+### :books: Workbook Image
 
 **API call output**
 <br>Returns a screenshot image of the entire dashboard.
@@ -101,7 +109,8 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 **Example API call**
 <br>[https://public.tableau.com/static/images/Ru/RunningforOlympicGold/RunningforOlympicGold/1.png](https://public.tableau.com/static/images/Ru/RunningforOlympicGold/RunningforOlympicGold/1.png)
 
-### :chart_with_upwards_trend: Workbook Thumbnail
+
+### :books: Workbook Thumbnail
 
 **API call output**
 <br>Returns a thumbnail-sized image, typically found on a Tableau Public author's page.
@@ -111,3 +120,30 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 
 **Example API call**
 <br>[https://public.tableau.com/thumb/views/RunningforOlympicGold/RunningforOlympicGold](https://public.tableau.com/thumb/views/RunningforOlympicGold/RunningforOlympicGold)
+
+
+### :notebook: Featured Authors 
+
+**API call output**
+<br>Returns a Tableau Public profile name and bio of their featured authors as JSON.
+
+**API call format**
+<br>https://public.tableau.com/s/authors/list/feed? 
+
+**Example API call**
+<br>[https://public.tableau.com/s/authors/list/feed?](https://public.tableau.com/s/authors/list/feed?)
+
+
+### :chart_with_upwards_trend: VOTD Dashboards
+
+**API call output**
+<br>Returns a list of the most recent VOTD winners from the page [https://public.tableau.com/en-us/gallery/?tab=viz-of-the-day&type=viz-of-the-day](https://public.tableau.com/en-us/gallery/?tab=viz-of-the-day&type=viz-of-the-day)
+
+**API call format**
+<br>https://public.tableau.com/api/gallery?page=0&count= + **Number of VOTD** + &galleryType=viz-of-the-day&language=en-us
+
+**Example API call**
+<br>Get last 100 VOTDs: [https://public.tableau.com/api/gallery?page=0&count=100&galleryType=viz-of-the-day&language=en-us
+](https://public.tableau.com/api/gallery?page=0&count=100&galleryType=viz-of-the-day&language=en-us
+)
+
