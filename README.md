@@ -30,7 +30,8 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 - [Following](https://github.com/wjsutton/tableau_public_api#user-content-busts_in_silhouette-following)
 - [Favourites](https://github.com/wjsutton/tableau_public_api#user-content-star-favourites)
 - [Workbook Image](https://github.com/wjsutton/tableau_public_api#user-content-books-workbook-image)
-- [Workbook Thumbnail](https://github.com/wjsutton/tableau_public_api#user-content-chart_with_upwards_trend-workbook-thumbnail)
+- [Workbook Thumbnail](https://github.com/wjsutton/tableau_public_api#user-content-books-workbook-thumbnail)
+- [Workbook Details](https://github.com/wjsutton/tableau_public_api#user-content-books-workbook-details)
 - [Featured Authors](https://github.com/wjsutton/tableau_public_api#user-content-notebook-featured-authors)
 - [VOTD Dashboards](https://github.com/wjsutton/tableau_public_api#user-content-chart_with_upwards_trend-votd-dashboards)
 
@@ -120,6 +121,18 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 
 **Example API call**
 <br>[https://public.tableau.com/thumb/views/RunningforOlympicGold/RunningforOlympicGold](https://public.tableau.com/thumb/views/RunningforOlympicGold/RunningforOlympicGold)
+
+
+### :books: Workbook Details
+
+**API call output**
+<br>Returns a details of a single workbook based on WorkbookRepoUrl, used in the favourites section of the Tableau Public profile to look up details of a workbook e.g. views, titles, etc.
+
+**API call format**
+<br>https://public.tableau.com/profile/api/single_workbook/ + **Workbook Repo Url** + ?
+
+**Example API call**
+<br>[https://public.tableau.com/profile/api/single_workbook/RunningforOlympicGold?](https://public.tableau.com/profile/api/single_workbook/RunningforOlympicGold?)
 
 
 ### :notebook: Featured Authors 
