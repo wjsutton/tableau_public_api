@@ -1,8 +1,7 @@
 
 # Currently Excludes attributions as these are returned as a table withing the dataset
-  id <- 'TrumpRe-ElectionFace'
-  id2 <- 'MensTennisGrandSlamWinners2000-2020'
-  library(jsonlite)
+
+library(jsonlite)
 
 get_workbook_details <- function(workbookRepoUrl){
   
@@ -15,7 +14,7 @@ get_workbook_details <- function(workbookRepoUrl){
     workbookRepoUrl = workbook$workbookRepoUrl,
     firstPublishDate = workbook$firstPublishDate,
     title = workbook$title,
-    description = workbook$description,
+    description = ifelse(is.null(workbook$description),'NA',workbook$description),
     lastPublishDate = workbook$lastPublishDate,
     permalink = ifelse(is.null(workbook$permalink),'NA',workbook$permalink),
     viewCount = workbook$viewCount,
