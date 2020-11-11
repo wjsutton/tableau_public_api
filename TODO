@@ -1,6 +1,18 @@
 To Do:
 - Add code snippets
 - Add functions and workflows, e.g. get username -> get workbooks -> get images of workbooks -> create basic page
+- Documentation for 
+Get workbook details 
+https://public.tableau.com/profile/api/single_workbook/',workbookRepoUrl,'?'
+# Lineage?
+'https://public.tableau.com/public/apis/workbook/CurriculumVitae-Resume/lineage?no_cache=1605112691645'
+
+# Search for All, Vizzes, Blogs, Resources
+'https://public.tableau.com/api/search/query?count=20&language=en-us&query=maps&start=0'
+'https://public.tableau.com/api/search/query?count=20&language=en-us&query=maps&start=0&type=vizzes'
+'https://public.tableau.com/api/search/query?count=20&language=en-us&query=maps&start=0&type=authors'
+'https://public.tableau.com/api/search/query?count=20&language=en-us&query=maps&start=0&type=blogs'
+'https://public.tableau.com/api/search/query?count=20&language=en-us&query=maps&start=0&type=resources'
 
 Tasks Done:
 - Add documentation for: List of VOTDs https://public.tableau.com/api/gallery?page=0&count=100&galleryType=viz-of-the-day&language=en-us
