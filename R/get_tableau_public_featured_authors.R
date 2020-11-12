@@ -75,6 +75,21 @@ visible_favs <- filter(fav_df,showInProfile==TRUE)
 
 fav_workbooks <- paste0('https://public.tableau.com/profile/',visible_favs$authorProfileName,'#!/vizhome/',gsub('/sheets/','/',visible_favs$defaultViewRepoUrl))
 #workbooks_last_publish <- visible_workbooks$lastPublishDate
+fav_thumbnails <- paste0('https://public.tableau.com/thumb/views/',visible_favs$workbookRepoUrl,'/',gsub(' |//.|#','',visible_favs$defaultViewName))
+fav_screenshots <- paste0('https://public.tableau.com/static/images/',substr(visible_favs$workbookRepoUrl,1,2),'/',visible_favs$workbookRepoUrl,'/',gsub(' |//.|#','',visible_favs$defaultViewName),'/1.png')
+visible_favs$last_publish_datetime <- as.POSIXct(visible_favs$lastPublishDate/1000, origin="1970-01-01")
 
+featured_authors_favs <- data.frame(
+  profile_name = visible_favs$authorProfileName,
+  workbooks = fav_workbooks,
+  last_publish = visible_favs$lastPublishDate,
+  workbook_screenshot = fav_screenshots,
+  workbook_thumbnail = fav_thumbnails,
+  last_publish_datetime = visible_favs$last_publish_datetime,
+  stringsAsFactors = F
+)
+
+featured_authors_favs <- arrange(featured_authors_favs,-last_publish)
+write.csv(featured_authors_favs,"data/featured_authors_favs.csv",row.names = F)
 
 
