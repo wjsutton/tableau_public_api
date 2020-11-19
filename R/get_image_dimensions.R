@@ -18,3 +18,6 @@ download.file(thumbnail, "temp.png", mode = "wb")
 localPNG <- readPNG("temp.png")
 dim(localPNG)
 file.remove("temp.png")
+# thumbnail
+# height 454
+# width  736
