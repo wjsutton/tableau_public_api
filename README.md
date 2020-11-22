@@ -32,6 +32,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 - [Workbook Image](https://github.com/wjsutton/tableau_public_api#user-content-books-workbook-image)
 - [Workbook Thumbnail](https://github.com/wjsutton/tableau_public_api#user-content-books-workbook-thumbnail)
 - [Workbook Details](https://github.com/wjsutton/tableau_public_api#user-content-books-workbook-details)
+- [Workbook Contents](https://github.com/wjsutton/tableau_public_api#user-content-books-workbook-contents)
 - [Featured Authors](https://github.com/wjsutton/tableau_public_api#user-content-notebook-featured-authors)
 - [VOTD Dashboards](https://github.com/wjsutton/tableau_public_api#user-content-chart_with_upwards_trend-votd-dashboards)
 
@@ -133,6 +134,20 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 
 **Example API call**
 <br>[https://public.tableau.com/profile/api/single_workbook/RunningforOlympicGold?](https://public.tableau.com/profile/api/single_workbook/RunningforOlympicGold?)
+
+
+### :books: Workbook Contents
+
+**API call output**
+<br>Returns a details of a single workbook based on WorkbookRepoUrl, returns some metadata about the workbook (author, titles) and all visible sheets/dashboards/stories packaged with the workbook as found under the "Metadata" section when viewing a viz on Tableau Public. These are found under the `viewInfos` section, they list out a sheetRepoUrlwe can be modified to produce a URL to that sheet/dashboard/story, e.g. 
+sheetRepoUrl: VizConnect-SmallDesignChoicesThatMakeaBigDifference/sheets/IncreasingWhiteSpace-Borders
+URL: [https://public.tableau.com/profile/simon.beaumont#!/vizhome/VizConnect-SmallDesignChoicesThatMakeaBigDifference/IncreasingWhiteSpace-Borders](https://public.tableau.com/profile/simon.beaumont#!/vizhome/VizConnect-SmallDesignChoicesThatMakeaBigDifference/IncreasingWhiteSpace-Borders)
+
+**API call format**
+<br>https://public.tableau.com/profile/api/workbook/ + **Workbook Repo Url** + ?
+
+**Example API call**
+<br>[https://public.tableau.com/profile/api/workbook/VizConnect-SmallDesignChoicesThatMakeaBigDifference?](https://public.tableau.com/profile/api/workbook/VizConnect-SmallDesignChoicesThatMakeaBigDifference?)
 
 
 ### :notebook: Featured Authors 
