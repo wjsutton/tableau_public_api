@@ -17,13 +17,13 @@ Quick Link
 [GitHub]:https://github.com/wjsutton
 [Website]:https://wjsutton.github.io/
 
-### :a: About
+## :a: About
 
 Tableau Public is the free version of Tableau's Desktop product, it allows for the creation and distribution of Tableau dashboards. The Tableau Public platform has an API for handling data relating to user profiles and workbooks (dashboards). This API can be accessed via a web browser or a programming language (R, Python, JavaScript).
 
 Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauPublicAPI.html) & Marc Reid's [blog post](https://datavis.blog/2019/05/13/tableau-public-api/) for sharing this information that acting as the starting point for this documentation.
 
-### :inbox_tray: Known API calls
+## :inbox_tray: Known API calls
 - [Profile](https://github.com/wjsutton/tableau_public_api#user-content-bust_in_silhouette-profile)
 - [Workbooks](https://github.com/wjsutton/tableau_public_api#user-content-books-workbooks)
 - [Followers](https://github.com/wjsutton/tableau_public_api#user-content-busts_in_silhouette-followers)
@@ -35,6 +35,10 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 - [Workbook Contents](https://github.com/wjsutton/tableau_public_api#user-content-books-workbook-contents)
 - [Featured Authors](https://github.com/wjsutton/tableau_public_api#user-content-notebook-featured-authors)
 - [VOTD Dashboards](https://github.com/wjsutton/tableau_public_api#user-content-chart_with_upwards_trend-votd-dashboards)
+
+## :gift: Projects
+[2020-08-24 Will Sutton's Assembling a Gallery of Iron Viz Submissions](https://wjsutton.github.io/data-viz/2020/08/24/Ironviz-2020-Gallery.html)
+[2020-10-31 Annabelle Rincon's Landing Page for Tableau Public](https://rativiz.wordpress.com/2020/10/31/landing-page-for-tableau-public-and-monitoring/)
 
 
 ### :bust_in_silhouette: Profile
