@@ -17,13 +17,13 @@ Quick Link
 [GitHub]:https://github.com/wjsutton
 [Website]:https://wjsutton.github.io/
 
-### :a: About
+## :a: About
 
 Tableau Public is the free version of Tableau's Desktop product, it allows for the creation and distribution of Tableau dashboards. The Tableau Public platform has an API for handling data relating to user profiles and workbooks (dashboards). This API can be accessed via a web browser or a programming language (R, Python, JavaScript).
 
 Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauPublicAPI.html) & Marc Reid's [blog post](https://datavis.blog/2019/05/13/tableau-public-api/) for sharing this information that acting as the starting point for this documentation.
 
-### :inbox_tray: Known API calls
+## :inbox_tray: Known API calls
 - [Profile](https://github.com/wjsutton/tableau_public_api#user-content-bust_in_silhouette-profile)
 - [Workbooks](https://github.com/wjsutton/tableau_public_api#user-content-books-workbooks)
 - [Followers](https://github.com/wjsutton/tableau_public_api#user-content-busts_in_silhouette-followers)
@@ -32,8 +32,13 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 - [Workbook Image](https://github.com/wjsutton/tableau_public_api#user-content-books-workbook-image)
 - [Workbook Thumbnail](https://github.com/wjsutton/tableau_public_api#user-content-books-workbook-thumbnail)
 - [Workbook Details](https://github.com/wjsutton/tableau_public_api#user-content-books-workbook-details)
+- [Workbook Contents](https://github.com/wjsutton/tableau_public_api#user-content-books-workbook-contents)
 - [Featured Authors](https://github.com/wjsutton/tableau_public_api#user-content-notebook-featured-authors)
 - [VOTD Dashboards](https://github.com/wjsutton/tableau_public_api#user-content-chart_with_upwards_trend-votd-dashboards)
+
+## :gift: Project Walkthroughs
+- [2020-08-24, Will Sutton's Assembling a Gallery of Iron Viz Submissions](https://wjsutton.github.io/data-viz/2020/08/24/Ironviz-2020-Gallery.html)
+- [2020-10-31, Annabelle Rincon's Landing Page for Tableau Public](https://rativiz.wordpress.com/2020/10/31/landing-page-for-tableau-public-and-monitoring/)
 
 
 ### :bust_in_silhouette: Profile
@@ -133,6 +138,20 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 
 **Example API call**
 <br>[https://public.tableau.com/profile/api/single_workbook/RunningforOlympicGold?](https://public.tableau.com/profile/api/single_workbook/RunningforOlympicGold?)
+
+
+### :books: Workbook Contents
+
+**API call output**
+<br>Returns a details of a single workbook based on WorkbookRepoUrl, returns some metadata about the workbook (author, titles) and all visible sheets/dashboards/stories packaged with the workbook as found under the "Metadata" section when viewing a viz on Tableau Public. These are found under the `viewInfos` section, they list out a sheetRepoUrlwe can be modified to produce a URL to that sheet/dashboard/story, e.g. 
+<br>sheetRepoUrl: VizConnect-SmallDesignChoicesThatMakeaBigDifference/sheets/IncreasingWhiteSpace-Borders
+<br>URL: [https://public.tableau.com/profile/simon.beaumont#!/vizhome/VizConnect-SmallDesignChoicesThatMakeaBigDifference/IncreasingWhiteSpace-Borders](https://public.tableau.com/profile/simon.beaumont#!/vizhome/VizConnect-SmallDesignChoicesThatMakeaBigDifference/IncreasingWhiteSpace-Borders)
+
+**API call format**
+<br>https://public.tableau.com/profile/api/workbook/ + **Workbook Repo Url** + ?
+
+**Example API call**
+<br>[https://public.tableau.com/profile/api/workbook/VizConnect-SmallDesignChoicesThatMakeaBigDifference?](https://public.tableau.com/profile/api/workbook/VizConnect-SmallDesignChoicesThatMakeaBigDifference?)
 
 
 ### :notebook: Featured Authors 

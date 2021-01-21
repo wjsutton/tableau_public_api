@@ -5,6 +5,11 @@ To Do:
 # Lineage? - What is it?
 'https://public.tableau.com/public/apis/workbook/CurriculumVitae-Resume/lineage?no_cache=1605112691645'
 
+# Add API for all sheets in a viz:
+e.g. https://public.tableau.com/profile/api/workbook/VizConnect-SmallDesignChoicesThatMakeaBigDifference?
+so the format is https://public.tableau.com/profile/api/workbook/ + Workbook Repo Url + ?
+
+
 # Search for All, Vizzes, Blogs, Resources
 'https://public.tableau.com/api/search/query?count=20&language=en-us&query=maps&start=0'
 'https://public.tableau.com/api/search/query?count=20&language=en-us&query=maps&start=0&type=vizzes'
