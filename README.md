@@ -50,7 +50,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 <br>https://public.tableau.com/profile/api/ + **Tableau Public Username** 
 
 **Example API call**
-<br>[https://public.tableau.com/profile/api/will7508](https://public.tableau.com/profile/api/will7508)
+<br>[https://public.tableau.com/profile/api/wjsutton](https://public.tableau.com/profile/api/wjsutton)
 
 
 ### :books: Workbooks
@@ -63,7 +63,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 <br>Next 300 workbooks: https://public.tableau.com/profile/api/ + **Tableau Public Username** + /workbooks?count=300&index=1
 
 **Example API call**
-<br>[https://public.tableau.com/profile/api/will7508/workbooks?count=300&index=0](https://public.tableau.com/profile/api/will7508/workbooks?count=300&index=0)
+<br>[https://public.tableau.com/profile/api/wjsutton/workbooks?count=300&index=0](https://public.tableau.com/profile/api/wjsutton/workbooks?count=300&index=0)
 
 
 ### :busts_in_silhouette: Followers
@@ -76,7 +76,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 <br>Get 1,000 followers: https://public.tableau.com/profile/api/followers/ + **Tableau Public Username** + ?count=1000&index=0
 
 **Example API call**
-<br>[https://public.tableau.com/profile/api/followers/will7508?count=300&index=0](https://public.tableau.com/profile/api/followers/will7508?count=300&index=0)
+<br>[https://public.tableau.com/profile/api/followers/wjsutton?count=300&index=0](https://public.tableau.com/profile/api/followers/wjsutton?count=300&index=0)
 
 
 ### :busts_in_silhouette: Following
@@ -89,7 +89,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 <br>Get 1,000 following: https://public.tableau.com/profile/api/following/ + **Tableau Public Username** + ?count=1000&index=0
 
 **Example API call**
-<br>[https://public.tableau.com/profile/api/following/will7508?count=300&index=0](https://public.tableau.com/profile/api/following/will7508?count=300&index=0)
+<br>[https://public.tableau.com/profile/api/following/wjsutton?count=300&index=0](https://public.tableau.com/profile/api/following/wjsutton?count=300&index=0)
 
 
 ### :star: Favourites
@@ -101,7 +101,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 <br>https://public.tableau.com/profile/api/favorite/ + **Tableau Public Username** + /workbook?
 
 **Example API call**
-<br>[https://public.tableau.com/profile/api/favorite/will7508/workbook?](https://public.tableau.com/profile/api/favorite/will7508/workbook?)
+<br>[https://public.tableau.com/profile/api/favorite/wjsutton/workbook?](https://public.tableau.com/profile/api/favorite/wjsutton/workbook?)
 
 
 ### :books: Workbook Image
