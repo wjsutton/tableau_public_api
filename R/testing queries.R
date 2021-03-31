@@ -13,3 +13,13 @@ try <- jsonlite::fromJSON(t)
 'https://public.tableau.com/api/search/query?count=20&language=en-us&query=maps&start=0&type=authors'
 'https://public.tableau.com/api/search/query?count=20&language=en-us&query=maps&start=0&type=blogs'
 'https://public.tableau.com/api/search/query?count=20&language=en-us&query=maps&start=0&type=resources'
+
+
+lots_of_sheets <- 'https://public.tableau.com/profile/api/workbook/VizConnect-SmallDesignChoicesThatMakeaBigDifference?'
+try <- jsonlite::fromJSON(lots_of_sheets)
+
+less_sheets <- 'https://public.tableau.com/profile/api/workbook/RunningforOlympicGold?'
+try <- jsonlite::fromJSON(less_sheets)
+
+t <- 'https://public.tableau.com/profile/api/workbook/ChildMarriage_16014531003290?'
+try <- jsonlite::fromJSON(t)
