@@ -47,6 +47,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 ## :raised_hands: Community Services
 - [Ken Flerage’s Tableau Public Stats Service](https://www.flerlagetwins.com/2021/03/stats-service.html)
 - [Josh Tapley’s Cerebro Project, an overview of all Tableau Public Users Stats](https://public.tableau.com/profile/josh.tapley#!/vizhome/TheCerebroProject/Overview)
+- [Nir Smilga’s Tableau Public Explorer, an alternative view built from Josh Tapley’s Cerebro Project](https://public.tableau.com/profile/nir.smilga#!/vizhome/TableauPublicExplorer/TableauPublicExplorer)
 - [Andre de Vries’ Web data connector for Tableau Public](https://www.theinformationlab.co.uk/2019/05/31/web-data-connector-for-tableau-public/)
 
 ## :inbox_tray: Tableau Public API Calls 
