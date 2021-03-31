@@ -35,11 +35,21 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 - [Workbook Contents](https://github.com/wjsutton/tableau_public_api#user-content-books-workbook-contents)
 - [Featured Authors](https://github.com/wjsutton/tableau_public_api#user-content-notebook-featured-authors)
 - [VOTD Dashboards](https://github.com/wjsutton/tableau_public_api#user-content-chart_with_upwards_trend-votd-dashboards)
+- [Search Results](https://github.com/wjsutton/tableau_public_api#user-content-mag-search-results)
 
 ## :gift: Project Walkthroughs
+- [2019-03-10,Jeffrey Shaffer's Using the Tableau Public API in 3 Easy Steps](https://www.dataplusscience.com/TableauPublicAPI.html)
+- [2019-05-13, Mark Reid's Tableau Public API blog post] (https://datavis.blog/2019/05/13/tableau-public-api/)
 - [2020-08-24, Will Sutton's Assembling a Gallery of Iron Viz Submissions](https://wjsutton.github.io/data-viz/2020/08/24/Ironviz-2020-Gallery.html)
 - [2020-10-31, Annabelle Rincon's Landing Page for Tableau Public](https://rativiz.wordpress.com/2020/10/31/landing-page-for-tableau-public-and-monitoring/)
+- [2021-01-21, Curtis Harris Sending Tableau VOTD as a Slack Message](https://notnullisland.com/sending-data-driven-slack-messages-with-tableaus-viz-of-the-day/)
 
+## :raised_hands: Community Services
+- [Ken Flerage’s Tableau Public Stats Service](https://www.flerlagetwins.com/2021/03/stats-service.html)
+- [Josh Tapley’s Cerebro Project, an overview of all Tableau Public Users Stats](https://public.tableau.com/profile/josh.tapley#!/vizhome/TheCerebroProject/Overview)
+- [Andre de Vries’ Web data connector for Tableau Public](https://www.theinformationlab.co.uk/2019/05/31/web-data-connector-for-tableau-public/)
+
+## :inbox_tray: Tableau Public API Calls 
 
 ### :bust_in_silhouette: Profile
 
@@ -172,10 +182,23 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 <br>Returns a list of the most recent VOTD winners from the page [https://public.tableau.com/en-us/gallery/?tab=viz-of-the-day&type=viz-of-the-day](https://public.tableau.com/en-us/gallery/?tab=viz-of-the-day&type=viz-of-the-day)
 
 **API call format**
-<br>https://public.tableau.com/api/gallery?page=0&count= + **Number of VOTD** + &galleryType=viz-of-the-day&language=en-us
+<br>https://public.tableau.com/api/gallery?page=0&count= + **Number of VOTDs** + &galleryType=viz-of-the-day&language=en-us
 
 **Example API call**
 <br>Get last 100 VOTDs: [https://public.tableau.com/api/gallery?page=0&count=100&galleryType=viz-of-the-day&language=en-us
 ](https://public.tableau.com/api/gallery?page=0&count=100&galleryType=viz-of-the-day&language=en-us
+)
+
+### :mag: Search Results
+
+**API call output**
+<br>Returns a list of the top search results for a given query as per the search page  [https://public.tableau.com/en-us/search/vizzes/](https://public.tableau.com/en-us/search/vizzes/)
+
+**API call format**
+<br>https://public.tableau.com/api/search/query?count= + **Number of Results** + &language=en-us&query= + **Search Term** +&start= + **Start at Viz Number** + &type= + **vizzes/authors**
+
+**Example API call**
+<br>Get top 100 Maps Search Results: [https://public.tableau.com/api/search/query?count=20&language=en-us&query=maps&start=0&type=vizzes
+](https://public.tableau.com/api/search/query?count=20&language=en-us&query=maps&start=0&type=vizzes
 )
 
