@@ -39,7 +39,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 
 ## :gift: Project Walkthroughs
 - [2019-03-10,Jeffrey Shaffer's Using the Tableau Public API in 3 Easy Steps](https://www.dataplusscience.com/TableauPublicAPI.html)
-- [2019-05-13, Mark Reid's Tableau Public API blog post] (https://datavis.blog/2019/05/13/tableau-public-api/)
+- [2019-05-13, Mark Reid's Tableau Public API blog post](https://datavis.blog/2019/05/13/tableau-public-api/)
 - [2020-08-24, Will Sutton's Assembling a Gallery of Iron Viz Submissions](https://wjsutton.github.io/data-viz/2020/08/24/Ironviz-2020-Gallery.html)
 - [2020-10-31, Annabelle Rincon's Landing Page for Tableau Public](https://rativiz.wordpress.com/2020/10/31/landing-page-for-tableau-public-and-monitoring/)
 - [2021-01-21, Curtis Harris Sending Tableau VOTD as a Slack Message](https://notnullisland.com/sending-data-driven-slack-messages-with-tableaus-viz-of-the-day/)
