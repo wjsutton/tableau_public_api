@@ -60,7 +60,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 
 **API call format**
 <br>First 300 workbooks: https://public.tableau.com/profile/api/ + **Tableau Public Username** + /workbooks?count=300&index=0
-<br>Next 300 workbooks: https://public.tableau.com/profile/api/ + **Tableau Public Username** + /workbooks?count=300&index=1
+<br>Next 300 workbooks: https://public.tableau.com/profile/api/ + **Tableau Public Username** + /workbooks?count=300&index=300
 
 **Example API call**
 <br>[https://public.tableau.com/profile/api/wjsutton/workbooks?count=300&index=0](https://public.tableau.com/profile/api/wjsutton/workbooks?count=300&index=0)
