@@ -130,14 +130,15 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 ### :books: Workbook Thumbnail
 
 **API call output**
-<br>Returns a thumbnail-sized image, typically found on a Tableau Public author's page.
+<br>Returns a thumbnail-sized image, typically found on a Tableau Public author's page. Note there are two different calls to produce a thumbnail image.
 
 **API call format**
 <br>https://public.tableau.com/thumb/views/ + **Workbook Repo Url** + / + **Default View Name (Excluding spaces & fullstops)** 
+<br>Alternative Call: <br>https://public.tableau.com/static/images/ + **First 2 Letters of Workbook Repo Url** + / + **Workbook Repo Url** + / + **Default View Name (Excluding spaces & fullstops)** + /4_3.png
 
 **Example API call**
 <br>[https://public.tableau.com/thumb/views/RunningforOlympicGold/RunningforOlympicGold](https://public.tableau.com/thumb/views/RunningforOlympicGold/RunningforOlympicGold)
-
+<br>Alternative Call: [https://public.tableau.com/static/images/Ru/RunningforOlympicGold/RunningforOlympicGold/4_3.png](https://public.tableau.com/static/images/Ru/RunningforOlympicGold/RunningforOlympicGold/4_3.png)
 
 ### :books: Workbook Details
 
