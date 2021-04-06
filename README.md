@@ -185,13 +185,20 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 
 **API call output**
 <br>Returns a list of the most recent VOTD winners from the page [https://public.tableau.com/en-us/gallery/?tab=viz-of-the-day&type=viz-of-the-day](https://public.tableau.com/en-us/gallery/?tab=viz-of-the-day&type=viz-of-the-day)
+<br>In addition there is a list of featured vizzes on the page [https://public.tableau.com/en-us/gallery/?tab=featured&type=featured](https://public.tableau.com/en-us/gallery/?tab=featured&type=featured)
 
 **API call format**
 <br>https://public.tableau.com/api/gallery?page=0&count= + **Number of VOTDs** + &galleryType=viz-of-the-day&language=en-us
+<br>
+<br>For featured vizzes:
+<br>https://public.tableau.com/api/gallery?page=0&count= + **Number of Vizzes** + &galleryType=featured&language=en-us
 
 **Example API call**
 <br>Get last 100 VOTDs: [https://public.tableau.com/api/gallery?page=0&count=100&galleryType=viz-of-the-day&language=en-us
 ](https://public.tableau.com/api/gallery?page=0&count=100&galleryType=viz-of-the-day&language=en-us
+)
+<br>Get last 100 featured vizzes: [https://public.tableau.com/api/gallery?page=0&count=100&galleryType=featured&language=en-us
+](https://public.tableau.com/api/gallery?page=0&count=100&galleryType=featured&language=en-us
 )
 
 ### :mag: Search Results
