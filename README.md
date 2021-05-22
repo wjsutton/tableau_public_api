@@ -43,6 +43,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 - [2020-08-24, Will Sutton's Assembling a Gallery of Iron Viz Submissions](https://wjsutton.github.io/data-viz/2020/08/24/Ironviz-2020-Gallery.html)
 - [2020-10-31, Annabelle Rincon's Landing Page for Tableau Public](https://rativiz.wordpress.com/2020/10/31/landing-page-for-tableau-public-and-monitoring/)
 - [2021-01-21, Curtis Harris Sending Tableau VOTD as a Slack Message](https://notnullisland.com/sending-data-driven-slack-messages-with-tableaus-viz-of-the-day/)
+- [2021-05-16, Priyanka Dobhal's Design Your Tableau Portfolio](https://priyankadobhal.medium.com/tableau-design-your-tableau-portfolio-371932a3087a)
 
 ## :raised_hands: Community Services
 - [Ken Flerage’s Tableau Public Stats Service](https://www.flerlagetwins.com/2021/03/stats-service.html)
@@ -200,6 +201,11 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 <br>Get last 100 featured vizzes: [https://public.tableau.com/api/gallery?page=0&count=100&galleryType=featured&language=en-us
 ](https://public.tableau.com/api/gallery?page=0&count=100&galleryType=featured&language=en-us
 )
+
+**:floppy_disk: Dataset**
+<br>Tableau Public's Viz of the Day : [Google Sheets](https://docs.google.com/spreadsheets/d/10Pm_1wnlUBwpWmLomY7U-yhL0wgLBdiQyeaaF3sV_J0/edit?usp=sharing)
+
+
 
 ### :mag: Search Results
 
