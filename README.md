@@ -124,11 +124,17 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 **API call output**
 <br>Returns a screenshot image of the entire dashboard.
 
+**UPDATE**
+<br>Thanks to [Kelly Gilbert](https://twitter.com/kelly_gilbert/status/1481495266448527363?s=20) there is a more reliable API call for a fullscreen image.
+<br>"https://public.tableau.com/views/WORKBOOKNAME/VIEWNAME.png?%3Adisplay_static_image=y&:showVizHome=n"
+
 **API call format**
-<br>https://public.tableau.com/static/images/ + **First 2 Letters of Workbook Repo Url** + / + **Workbook Repo Url** + / + **Default View Name (Excluding spaces & fullstops)** + /1.png
+<br>https://public.tableau.com/views/+ **Workbook Repo Url** + / + **Default View Name (Excluding spaces & fullstops)** + .png?%3Adisplay_static_image=y&:showVizHome=n
+<br>OLD Version: https://public.tableau.com/static/images/ + **First 2 Letters of Workbook Repo Url** + / + **Workbook Repo Url** + / + **Default View Name (Excluding spaces & fullstops)** + /1.png
 
 **Example API call**
-<br>[https://public.tableau.com/static/images/Ru/RunningforOlympicGold/RunningforOlympicGold/1.png](https://public.tableau.com/static/images/Ru/RunningforOlympicGold/RunningforOlympicGold/1.png)
+<br>[https://public.tableau.com/views/RunningforOlympicGold/RunningforOlympicGold.png?%3Adisplay_static_image=y&:showVizHome=n](https://public.tableau.com/views/RunningforOlympicGold/RunningforOlympicGold.png?%3Adisplay_static_image=y&:showVizHome=n)
+<br>OLD Version:[https://public.tableau.com/static/images/Ru/RunningforOlympicGold/RunningforOlympicGold/1.png](https://public.tableau.com/static/images/Ru/RunningforOlympicGold/RunningforOlympicGold/1.png)
 
 
 ### :books: Workbook Thumbnail
