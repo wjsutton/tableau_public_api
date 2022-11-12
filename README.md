@@ -85,27 +85,27 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 ### :busts_in_silhouette: Followers
 
 **API call output**
-<br>Retrieves a list of followers for a Tableau Public User, returns usernames, user metadata, details of their latest workbook. Note that the count of accounts appears to be unlimited, i.e. `count=300` will return up to 300 accounts, `count=1000` will return up to 1,000 accounts.
+<br>Retrieves a list of followers for a Tableau Public User, returns usernames, user metadata, details of their latest workbook. Note that the count of accounts appears to be now limited to 24 per call, i.e. `count=24` will return up to 24 accounts, `count=24&index=24` will return the next 24 accounts.
 
 **API call format**
-<br>Get 10 followers: https://public.tableau.com/profile/api/followers/ + **Tableau Public Username** + ?count=10&index=0
-<br>Get next 10 followers: https://public.tableau.com/profile/api/followers/ + **Tableau Public Username** + ?count=10&index=10
+<br>Get 24 followers: https://public.tableau.com/profile/api/followers/ + **Tableau Public Username** + ?count=24&index=0
+<br>Get next 24 followers: https://public.tableau.com/profile/api/followers/ + **Tableau Public Username** + ?count=24&index=24
 
 **Example API call**
-<br>[https://public.tableau.com/profile/api/followers/wjsutton?count=10&index=0](https://public.tableau.com/profile/api/followers/wjsutton?count=10&index=0)
+<br>[https://public.tableau.com/profile/api/followers/wjsutton?count=24&index=0](https://public.tableau.com/profile/api/followers/wjsutton?count=24&index=0)
 
 
 ### :busts_in_silhouette: Following
 
 **API call output**
-<br>Retrieves a list of accounts being followed by a Tableau Public User, returns usernames, user metadata, details of their latest workbook. Note that the count of accounts appears to be unlimited, i.e. `count=300` will return up to 300 accounts, `count=1000` will return up to 1,000 accounts.
+<br>Retrieves a list of accounts being followed by a Tableau Public User, returns usernames, user metadata, details of their latest workbook. Note that the count of accounts appears to be now limited to 24 per call, i.e. `count=24` will return up to 24 accounts, `count=24&index=24` will return the next 24 accounts.
 
 **API call format**
-<br>Get 10 following: https://public.tableau.com/profile/api/following/ + **Tableau Public Username** + ?count=10&index=0
-<br>Get next 10 following: https://public.tableau.com/profile/api/following/ + **Tableau Public Username** + ?count=10&index=10
+<br>Get 24 following: https://public.tableau.com/profile/api/following/ + **Tableau Public Username** + ?count=24&index=0
+<br>Get next 24 following: https://public.tableau.com/profile/api/following/ + **Tableau Public Username** + ?count=24&index=24
 
 **Example API call**
-<br>[https://public.tableau.com/profile/api/following/wjsutton?count=10&index=0](https://public.tableau.com/profile/api/following/wjsutton?count=10&index=0)
+<br>[https://public.tableau.com/profile/api/following/wjsutton?count=24&index=0](https://public.tableau.com/profile/api/following/wjsutton?count=24&index=0)
 
 
 ### :star: Favourites
