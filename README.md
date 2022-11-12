@@ -72,7 +72,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 ### :books: Workbooks
 
 **API call output**
-<br>Retrieves details of the last 300 workbooks associated to a Tableau Public username. Note that the next 300 workbooks can be retrieved by changing the index section to `index=1` or `index=2`, `index=3`, etc. Returned as a JSON.
+<br>Retrieves details of the last 300 workbooks associated to a Tableau Public username. Note that the next 300 workbooks can be retrieved by changing the index section to `index=300` or `index=600`, `index=900`, etc. Returned as a JSON.
 
 **API call format**
 <br>First 300 workbooks: https://public.tableau.com/profile/api/ + **Tableau Public Username** + /workbooks?count=300&index=0
