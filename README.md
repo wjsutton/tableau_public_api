@@ -51,6 +51,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 - [Nir Smilga’s Tableau Public Explorer, an alternative view built from Josh Tapley’s Cerebro Project](https://public.tableau.com/profile/nir.smilga#!/vizhome/TableauPublicExplorer/TableauPublicExplorer)
 - [Andre de Vries’ Web data connector for Tableau Public](https://www.theinformationlab.co.uk/2019/05/31/web-data-connector-for-tableau-public/)
 - [Jessica Moon's 2022 Iron Viz Qualifier Entries](https://public.tableau.com/app/profile/jessica.moon/viz/IronVizQualifierEntries2022/IronVizQualifierEntries2022)
+- [Jessica Moon's 2023 Iron Viz Qualifier Entries](https://public.tableau.com/app/profile/jessica.moon/viz/IronVizQualifierEntries2023/IronVizQualifierEntries2023)
 
 ## :floppy_disk: Data sets
 - Tableau Public's Viz of the Day : [Google Sheets](https://docs.google.com/spreadsheets/d/10Pm_1wnlUBwpWmLomY7U-yhL0wgLBdiQyeaaF3sV_J0/edit?usp=sharing)
