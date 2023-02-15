@@ -69,19 +69,25 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 **Example API call**
 <br>[https://public.tableau.com/profile/api/wjsutton](https://public.tableau.com/profile/api/wjsutton)
 
+Note a basic user profile description query is available via:
+<br>[https://public.tableau.com/public/apis/authors?profileName=wjsutton](https://public.tableau.com/public/apis/authors?profileName=wjsutton)
 
 ### :books: Workbooks
 
 **API call output**
-<br>Retrieves details of the last 300 workbooks associated to a Tableau Public username. Note that the next 300 workbooks can be retrieved by changing the index section to `index=300` or `index=600`, `index=900`, etc. Returned as a JSON.
+<br>Retrieves details of the last 50 workbooks associated to a Tableau Public username. Returned as a JSON.
+
+Note that the next 50 workbooks can be retrieved by changing the start section to `start=50` or `start=100`, `start=150`, etc. 
+
+In Feb 2023 a visibility parameter has been added,'&visibility=NON_HIDDEN' which will only allow the API to reach visible workbooks on a user's profile. 
+
 
 **API call format**
-<br>First 300 workbooks: https://public.tableau.com/profile/api/ + **Tableau Public Username** + /workbooks?count=300&index=0
-<br>Next 300 workbooks: https://public.tableau.com/profile/api/ + **Tableau Public Username** + /workbooks?count=300&index=300
+<br>First 50 workbooks: https://public.tableau.com/public/apis/workbooks?profileName= + **Tableau Public Username** + &start=0&count=50&visibility=NON_HIDDEN
+<br><br>Next 50 workbooks: https://public.tableau.com/public/apis/workbooks?profileName= + **Tableau Public Username** + &start=50&count=50&visibility=NON_HIDDEN
 
 **Example API call**
-<br>[https://public.tableau.com/profile/api/wjsutton/workbooks?count=300&index=0](https://public.tableau.com/profile/api/wjsutton/workbooks?count=300&index=0)
-
+<br>[https://public.tableau.com/public/apis/workbooks?profileName=wjsutton&start=0&count=50&visibility=NON_HIDDEN](https://public.tableau.com/public/apis/workbooks?profileName=wjsutton&start=0&count=50&visibility=NON_HIDDEN)
 
 ### :busts_in_silhouette: Followers
 
