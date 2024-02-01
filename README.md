@@ -33,6 +33,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 - [Workbook Thumbnail](https://github.com/wjsutton/tableau_public_api#user-content-books-workbook-thumbnail)
 - [Workbook Details](https://github.com/wjsutton/tableau_public_api#user-content-books-workbook-details)
 - [Workbook Contents](https://github.com/wjsutton/tableau_public_api#user-content-books-workbook-contents)
+- [Shared Workbooks](https://github.com/wjsutton/tableau_public_api/edit/main/README.md#--tableau-public-api-documentation)
 - [Featured Authors](https://github.com/wjsutton/tableau_public_api#user-content-notebook-featured-authors)
 - [VOTD Dashboards](https://github.com/wjsutton/tableau_public_api#user-content-chart_with_upwards_trend-votd-dashboards)
 - [Search Results](https://github.com/wjsutton/tableau_public_api#user-content-mag-search-results)
@@ -173,7 +174,7 @@ In Feb 2023 a visibility parameter has been added,'&visibility=NON_HIDDEN' which
 ### :books: Workbook Contents
 
 **API call output**
-<br>Returns a details of a single workbook based on WorkbookRepoUrl, returns some metadata about the workbook (author, titles) and all visible sheets/dashboards/stories packaged with the workbook as found under the "Metadata" section when viewing a viz on Tableau Public. These are found under the `viewInfos` section, they list out a sheetRepoUrlwe can be modified to produce a URL to that sheet/dashboard/story, e.g. 
+<br>Returns details of a single workbook based on WorkbookRepoUrl, returns some metadata about the workbook (author, titles) and all visible sheets/dashboards/stories packaged with the workbook as found under the "Metadata" section when viewing a viz on Tableau Public. These are found under the `viewInfos` section, they list out a sheetRepoUrlwe can be modified to produce a URL to that sheet/dashboard/story, e.g. 
 <br>sheetRepoUrl: VizConnect-SmallDesignChoicesThatMakeaBigDifference/sheets/IncreasingWhiteSpace-Borders
 <br>URL: [https://public.tableau.com/profile/simon.beaumont#!/vizhome/VizConnect-SmallDesignChoicesThatMakeaBigDifference/IncreasingWhiteSpace-Borders](https://public.tableau.com/profile/simon.beaumont#!/vizhome/VizConnect-SmallDesignChoicesThatMakeaBigDifference/IncreasingWhiteSpace-Borders)
 
@@ -183,6 +184,18 @@ In Feb 2023 a visibility parameter has been added,'&visibility=NON_HIDDEN' which
 **Example API call**
 <br>[https://public.tableau.com/profile/api/workbook/VizConnect-SmallDesignChoicesThatMakeaBigDifference?](https://public.tableau.com/profile/api/workbook/VizConnect-SmallDesignChoicesThatMakeaBigDifference?)
 
+
+### :books: Shared Workbooks
+*Discovered by a "friend of the repo"*
+
+**API call output**
+<br>Returns source workbook details for a shared workbook url.
+
+**API call format**
+<br>https://public.tableau.com/profile/api/workbook/shared/ + **Share_id** 
+
+**Example API call**
+<br>[https://public.tableau.com/profile/api/workbook/shared/3QJBD7FYC](https://public.tableau.com/profile/api/workbook/shared/3QJBD7FYC)
 
 ### :notebook: Featured Authors 
 
