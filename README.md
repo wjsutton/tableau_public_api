@@ -33,7 +33,8 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 - [Workbook Thumbnail](https://github.com/wjsutton/tableau_public_api#user-content-books-workbook-thumbnail)
 - [Workbook Details](https://github.com/wjsutton/tableau_public_api#user-content-books-workbook-details)
 - [Workbook Contents](https://github.com/wjsutton/tableau_public_api#user-content-books-workbook-contents)
-- [Shared Workbooks](https://github.com/wjsutton/tableau_public_api/edit/main/README.md#--tableau-public-api-documentation)
+- [Related Workbooks](https://github.com/wjsutton/tableau_public_api#books-related-workbooks)
+- [Shared Workbooks](https://github.com/wjsutton/tableau_public_api#books-shared-workbooks)
 - [Featured Authors](https://github.com/wjsutton/tableau_public_api#user-content-notebook-featured-authors)
 - [VOTD Dashboards](https://github.com/wjsutton/tableau_public_api#user-content-chart_with_upwards_trend-votd-dashboards)
 - [Search Results](https://github.com/wjsutton/tableau_public_api#user-content-mag-search-results)
@@ -184,6 +185,17 @@ In Feb 2023 a visibility parameter has been added,'&visibility=NON_HIDDEN' which
 **Example API call**
 <br>[https://public.tableau.com/profile/api/workbook/VizConnect-SmallDesignChoicesThatMakeaBigDifference?](https://public.tableau.com/profile/api/workbook/VizConnect-SmallDesignChoicesThatMakeaBigDifference?)
 
+### :books: Related Workbooks
+*Discovered by Chris Meardon*
+
+**API call output**
+<br>Returns a list of workbooks (max 13) related to a queried workbook.
+
+**API call format**
+<br>https://public.tableau.com/public/apis/bff/workbooks/v1/ + **Workbook Repo Url** /recommended-workbooks? + count= **n**
+
+**Example API call**
+<br>https://public.tableau.com/public/apis/bff/workbooks/v1/RunningforOlympicGold/recommended-workbooks?count=13
 
 ### :books: Shared Workbooks
 *Discovered by a "friend of the repo"*
