@@ -223,17 +223,34 @@ In Feb 2023 a visibility parameter has been added,'&visibility=NON_HIDDEN' which
 
 ### :chart_with_upwards_trend: VOTD Dashboards
 
+
 **API call output**
+<br>Returns a list of the most recent VOTD winners from the page [https://public.tableau.com/app/discover/viz-of-the-day](https://public.tableau.com/app/discover/viz-of-the-day)
+
+**API call format**
+<br>https://public.tableau.com/public/apis/bff/discover/v1/vizzes/viz-of-the-day?page= + **Page Number** + &limit= + **Number of VOTDs** (max 20)
+<br>
+<i>Note to get all VOTDs you will need to iterate through page numbers, increasing by one until no more results are returned.</i>
+
+**Example API call**
+<br>Get last 20 VOTDs: [https://public.tableau.com/public/apis/bff/discover/v1/vizzes/viz-of-the-day?page=0&limit=20
+](https://public.tableau.com/public/apis/bff/discover/v1/vizzes/viz-of-the-day?page=0&limit=20)
+<br>Get next 20 VOTDs: [https://public.tableau.com/public/apis/bff/discover/v1/vizzes/viz-of-the-day?page=1&limit=20
+](https://public.tableau.com/public/apis/bff/discover/v1/vizzes/viz-of-the-day?page=1&limit=20
+)
+
+
+**Historical API call output | DOES NOT WORK ANYMORE**
 <br>Returns a list of the most recent VOTD winners from the page [https://public.tableau.com/en-us/gallery/?tab=viz-of-the-day&type=viz-of-the-day](https://public.tableau.com/en-us/gallery/?tab=viz-of-the-day&type=viz-of-the-day)
 <br>In addition there is a list of featured vizzes on the page [https://public.tableau.com/en-us/gallery/?tab=featured&type=featured](https://public.tableau.com/en-us/gallery/?tab=featured&type=featured)
 
-**API call format**
+**Historical API call format | DOES NOT WORK ANYMORE**
 <br>https://public.tableau.com/api/gallery?page=0&count= + **Number of VOTDs** + &galleryType=viz-of-the-day&language=en-us
 <br>
 <br>For featured vizzes:
 <br>https://public.tableau.com/api/gallery?page=0&count= + **Number of Vizzes** + &galleryType=featured&language=en-us
 
-**Example API call**
+**Historical Example API call | DOES NOT WORK ANYMORE**
 <br>Get last 100 VOTDs: [https://public.tableau.com/api/gallery?page=0&count=100&galleryType=viz-of-the-day&language=en-us
 ](https://public.tableau.com/api/gallery?page=0&count=100&galleryType=viz-of-the-day&language=en-us
 )
@@ -241,7 +258,7 @@ In Feb 2023 a visibility parameter has been added,'&visibility=NON_HIDDEN' which
 ](https://public.tableau.com/api/gallery?page=0&count=100&galleryType=featured&language=en-us
 )
 
-**:floppy_disk: Dataset**
+**:floppy_disk: Dataset | NO LONGER UPDATED DUE API CHANGE**
 <br>Tableau Public's Viz of the Day : [Google Sheets](https://docs.google.com/spreadsheets/d/10Pm_1wnlUBwpWmLomY7U-yhL0wgLBdiQyeaaF3sV_J0/edit?usp=sharing)
 
 
