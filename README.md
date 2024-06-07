@@ -239,10 +239,13 @@ In Feb 2023 a visibility parameter has been added,'&visibility=NON_HIDDEN' which
 ](https://public.tableau.com/public/apis/bff/discover/v1/vizzes/viz-of-the-day?page=1&limit=20
 )
 
+### :chart_with_upwards_trend: Historical VOTD Dashboards | DOES NOT WORK ANYMORE
 
 **Historical API call output | DOES NOT WORK ANYMORE**
-<br>Returns a list of the most recent VOTD winners from the page [https://public.tableau.com/en-us/gallery/?tab=viz-of-the-day&type=viz-of-the-day](https://public.tableau.com/en-us/gallery/?tab=viz-of-the-day&type=viz-of-the-day)
-<br>In addition there is a list of featured vizzes on the page [https://public.tableau.com/en-us/gallery/?tab=featured&type=featured](https://public.tableau.com/en-us/gallery/?tab=featured&type=featured)
+<br><br>Returns a list of the most recent VOTD winners from the page:
+<br>[https://public.tableau.com/en-us/gallery/?tab=viz-of-the-day&type=viz-of-the-day](https://public.tableau.com/en-us/gallery/?tab=viz-of-the-day&type=viz-of-the-day)
+<br><br>In addition there is a list of featured vizzes on the page 
+<br>[https://public.tableau.com/en-us/gallery/?tab=featured&type=featured](https://public.tableau.com/en-us/gallery/?tab=featured&type=featured)
 
 **Historical API call format | DOES NOT WORK ANYMORE**
 <br>https://public.tableau.com/api/gallery?page=0&count= + **Number of VOTDs** + &galleryType=viz-of-the-day&language=en-us
