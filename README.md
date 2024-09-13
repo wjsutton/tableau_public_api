@@ -228,15 +228,15 @@ In Feb 2023 a visibility parameter has been added,'&visibility=NON_HIDDEN' which
 <br>Returns a list of the most recent VOTD winners from the page [https://public.tableau.com/app/discover/viz-of-the-day](https://public.tableau.com/app/discover/viz-of-the-day)
 
 **API call format**
-<br>https://public.tableau.com/public/apis/bff/discover/v1/vizzes/viz-of-the-day?page= + **Page Number** + &limit= + **Number of VOTDs** (max 20)
+<br>https://public.tableau.com/public/apis/bff/discover/v1/vizzes/viz-of-the-day?page= + **Page Number** + &limit= + **Number of VOTDs** (max 12)
 <br>
 <i>Note to get all VOTDs you will need to iterate through page numbers, increasing by one until no more results are returned.</i>
 
 **Example API call**
-<br>Get last 20 VOTDs: [https://public.tableau.com/public/apis/bff/discover/v1/vizzes/viz-of-the-day?page=0&limit=20
-](https://public.tableau.com/public/apis/bff/discover/v1/vizzes/viz-of-the-day?page=0&limit=20)
-<br>Get next 20 VOTDs: [https://public.tableau.com/public/apis/bff/discover/v1/vizzes/viz-of-the-day?page=1&limit=20
-](https://public.tableau.com/public/apis/bff/discover/v1/vizzes/viz-of-the-day?page=1&limit=20
+<br>Get last 12 VOTDs: [https://public.tableau.com/public/apis/bff/discover/v1/vizzes/viz-of-the-day?page=0&limit=12
+](https://public.tableau.com/public/apis/bff/discover/v1/vizzes/viz-of-the-day?page=0&limit=12)
+<br>Get next 12 VOTDs: [https://public.tableau.com/public/apis/bff/discover/v1/vizzes/viz-of-the-day?page=1&limit=12
+](https://public.tableau.com/public/apis/bff/discover/v1/vizzes/viz-of-the-day?page=1&limit=12
 )
 
 ### :chart_with_upwards_trend: Historical VOTD Dashboards | DOES NOT WORK ANYMORE
