@@ -189,13 +189,13 @@ In Feb 2023 a visibility parameter has been added,'&visibility=NON_HIDDEN' which
 *Discovered by Chris Meardon*
 
 **API call output**
-<br>Returns a list of workbooks (max 13) related to a queried workbook.
+<br>Returns a list of workbooks (max 20) related to a queried workbook.
 
 **API call format**
-<br>https://public.tableau.com/public/apis/bff/workbooks/v1/ + **Workbook Repo Url** /recommended-workbooks? + count= **n**
+<br>https://public.tableau.com/public/apis/bff/workbooks/v2/ + **Workbook Repo Url** /recommended-workbooks? + count= **n**
 
 **Example API call**
-<br>https://public.tableau.com/public/apis/bff/workbooks/v1/RunningforOlympicGold/recommended-workbooks?count=13
+<br>https://public.tableau.com/public/apis/bff/workbooks/v2/RunningforOlympicGold/recommended-workbooks?count=20
 
 ### :books: Shared Workbooks
 *Discovered by a "friend of the repo"*
