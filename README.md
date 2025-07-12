@@ -25,6 +25,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 
 ## :inbox_tray: Known API calls
 - [Profile](https://github.com/wjsutton/tableau_public_api#user-content-bust_in_silhouette-profile)
+- [Profile Categories](https://github.com/wjsutton/tableau_public_api#user-content-bust_in_silhouette-profile-categories)
 - [Workbooks](https://github.com/wjsutton/tableau_public_api#user-content-books-workbooks)
 - [Followers](https://github.com/wjsutton/tableau_public_api#user-content-busts_in_silhouette-followers)
 - [Following](https://github.com/wjsutton/tableau_public_api#user-content-busts_in_silhouette-following)
@@ -73,6 +74,22 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 
 Note a basic user profile description query is available via:
 <br>[https://public.tableau.com/public/apis/authors?profileName=wjsutton](https://public.tableau.com/public/apis/authors?profileName=wjsutton)
+
+### :bust_in_silhouette: Profile Categories
+*Discovered by Jacob Rothemund*
+
+**API call output**
+<br>Retrieve details of a user's workbook categories. This includes the category names, the workbooks contained within the categories, with basic details about the workbooks with views and favourites. Returned as a JSON.
+
+**API call format**
+<br>ttps://public.tableau.com/public/apis/bff/v1/author/ + **Tableau Public Username** + /categories?startIndex=0&pageSize=500
+
+**Example API call**
+<br>[https://public.tableau.com/public/apis/bff/v1/author/jacob.rothemund/categories?startIndex=0&pageSize=500](https://public.tableau.com/public/apis/bff/v1/author/jacob.rothemund/categories?startIndex=0&pageSize=500)
+
+Note that the next 500 categories can be retrieved by changing the startIndex section to `startIndex=1`. 
+
+
 
 ### :books: Workbooks
 
