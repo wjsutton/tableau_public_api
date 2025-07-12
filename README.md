@@ -82,7 +82,7 @@ Note a basic user profile description query is available via:
 <br>Retrieve details of a user's workbook categories. This includes the category names, the workbooks contained within the categories, with basic details about the workbooks with views and favourites. Returned as a JSON.
 
 **API call format**
-<br>ttps://public.tableau.com/public/apis/bff/v1/author/ + **Tableau Public Username** + /categories?startIndex=0&pageSize=500
+<br>https://public.tableau.com/public/apis/bff/v1/author/ + **Tableau Public Username** + /categories?startIndex=0&pageSize=500
 
 **Example API call**
 <br>[https://public.tableau.com/public/apis/bff/v1/author/jacob.rothemund/categories?startIndex=0&pageSize=500](https://public.tableau.com/public/apis/bff/v1/author/jacob.rothemund/categories?startIndex=0&pageSize=500)
