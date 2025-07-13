@@ -2,5 +2,5 @@
 .Rhistory
 .RData
 .Ruserdata
-Python/.venv
-Python/.env
+*.env
+*.venv
