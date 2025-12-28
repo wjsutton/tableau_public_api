@@ -23,23 +23,6 @@ Tableau Public is the free version of Tableau's Desktop product, it allows for t
 
 Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauPublicAPI.html) & Marc Reid's [blog post](https://datavis.blog/2019/05/13/tableau-public-api/) for sharing this information that acting as the starting point for this documentation.
 
-## :inbox_tray: Known API calls
-- [Profile](https://github.com/wjsutton/tableau_public_api#user-content-bust_in_silhouette-profile)
-- [Profile Categories](https://github.com/wjsutton/tableau_public_api#user-content-bust_in_silhouette-profile-categories)
-- [Workbooks](https://github.com/wjsutton/tableau_public_api#user-content-books-workbooks)
-- [Followers](https://github.com/wjsutton/tableau_public_api#user-content-busts_in_silhouette-followers)
-- [Following](https://github.com/wjsutton/tableau_public_api#user-content-busts_in_silhouette-following)
-- [Favourites](https://github.com/wjsutton/tableau_public_api#user-content-star-favourites)
-- [Workbook Image](https://github.com/wjsutton/tableau_public_api#user-content-books-workbook-image)
-- [Workbook Thumbnail](https://github.com/wjsutton/tableau_public_api#user-content-books-workbook-thumbnail)
-- [Workbook Details](https://github.com/wjsutton/tableau_public_api#user-content-books-workbook-details)
-- [Workbook Contents](https://github.com/wjsutton/tableau_public_api#user-content-books-workbook-contents)
-- [Related Workbooks](https://github.com/wjsutton/tableau_public_api#books-related-workbooks)
-- [Shared Workbooks](https://github.com/wjsutton/tableau_public_api#books-shared-workbooks)
-- [Featured Authors](https://github.com/wjsutton/tableau_public_api#user-content-notebook-featured-authors)
-- [VOTD Dashboards](https://github.com/wjsutton/tableau_public_api#user-content-chart_with_upwards_trend-votd-dashboards)
-- [Search Results](https://github.com/wjsutton/tableau_public_api#user-content-mag-search-results)
-
 <!-- API_STATUS_START -->
 <!-- API_STATUS_END -->
 
@@ -85,14 +68,12 @@ Note a basic user profile description query is available via:
 <br>Retrieve details of a user's workbook categories. This includes the category names, the workbooks contained within the categories, with basic details about the workbooks with views and favourites. Returned as a JSON.
 
 **API call format**
-<br>https://public.tableau.com/public/apis/bff/v1/author/ + **Tableau Public Username** + /categories?startIndex=0&pageSize=500
+<br>https://public.tableau.com/public/apis/bff/v2/author/ + **Tableau Public Username** + /categories?startIndex=0&pageSize=500
 
 **Example API call**
-<br>[https://public.tableau.com/public/apis/bff/v1/author/jacob.rothemund/categories?startIndex=0&pageSize=500](https://public.tableau.com/public/apis/bff/v1/author/jacob.rothemund/categories?startIndex=0&pageSize=500)
+<br>[https://public.tableau.com/public/apis/bff/v2/author/jacob.rothemund/categories?startIndex=0&pageSize=500](https://public.tableau.com/public/apis/bff/v2/author/jacob.rothemund/categories?startIndex=0&pageSize=500)
 
 Note that the next 500 categories can be retrieved by changing the startIndex section to `startIndex=1`. 
-
-
 
 ### :books: Workbooks
 
@@ -248,23 +229,62 @@ In Feb 2023 a visibility parameter has been added,'&visibility=NON_HIDDEN' which
 <br>Returns a list of the most recent VOTD winners from the page [https://public.tableau.com/app/discover/viz-of-the-day](https://public.tableau.com/app/discover/viz-of-the-day)
 
 **API call format**
-<br>https://public.tableau.com/public/apis/bff/discover/v1/vizzes/viz-of-the-day?page= + **Page Number** + &limit= + **Number of VOTDs** (max 12)
+<br>https://public.tableau.com/public/apis/bff/discover/v2/vizzes/viz-of-the-day?page= + **Page Number** + &limit= + **Number of VOTDs** (max 12)
 <br>
 <i>Note to get all VOTDs you will need to iterate through page numbers, increasing by one until no more results are returned.</i>
+<i>In addition the parameter 'startIndex' may be used instead of 'page'</i>
 
 **Example API call**
-<br>Get last 12 VOTDs: [https://public.tableau.com/public/apis/bff/discover/v1/vizzes/viz-of-the-day?page=0&limit=12
-](https://public.tableau.com/public/apis/bff/discover/v1/vizzes/viz-of-the-day?page=0&limit=12)
-<br>Get next 12 VOTDs: [https://public.tableau.com/public/apis/bff/discover/v1/vizzes/viz-of-the-day?page=1&limit=12
-](https://public.tableau.com/public/apis/bff/discover/v1/vizzes/viz-of-the-day?page=1&limit=12
+<br>Get last 12 VOTDs: [https://public.tableau.com/public/apis/bff/discover/v2/vizzes/viz-of-the-day?page=0&limit=12
+](https://public.tableau.com/public/apis/bff/discover/v2/vizzes/viz-of-the-day?page=0&limit=12)
+<br>Get next 12 VOTDs: [https://public.tableau.com/public/apis/bff/discover/v2/vizzes/viz-of-the-day?page=1&limit=12
+](https://public.tableau.com/public/apis/bff/discover/v2/vizzes/viz-of-the-day?page=1&limit=12
 )
 
-### :chart_with_upwards_trend: Historical VOTD Dashboards | DOES NOT WORK ANYMORE
+### :mag: Search Workbooks
+
+**API call output**
+<br>Returns a list of the top workbook search results for a given query.
+
+**API call format**
+<br>https://public.tableau.com/public/apis/bff/v1/search/query-workbooks?count= + **Number of Results** + &query= + **Search Term** + &start= + **Start at Viz Number**
+
+**Example API call**
+<br>[https://public.tableau.com/public/apis/bff/v1/search/query-workbooks?count=20&query=maps&start=0](https://public.tableau.com/public/apis/bff/v1/search/query-workbooks?count=20&query=maps&start=0)
+
+
+### :mag: Search Authors
+
+**API call output**
+<br>Returns a list of the top author search results for a given query.
+
+**API call format**
+<br>https://public.tableau.com/public/apis/bff/v1/search/query-authors?count= + **Number of Results** + &query= + **Search Term** + &start= + **Start at Author Number**
+
+**Example API call**
+<br>[https://public.tableau.com/public/apis/bff/v1/search/query-authors?count=20&query=maps&start=0](https://public.tableau.com/public/apis/bff/v1/search/query-authors?count=20&query=maps&start=0)
+
+### :arrow_down: Download Workbook
+
+**API call output**
+<br>Downloads a given workbook (.twbx file) to your Downloads folder, or default download location.
+
+**API call format**
+<br>https://public.tableau.com/workbooks/ + **WorkbookName** + .twb
+
+**Example API call**
+<br>[https://public.tableau.com/workbooks/SuperMartSalesOverview.twb](https://public.tableau.com/workbooks/SuperMartSalesOverview.twb)
+
+## :file_cabinet: Archive - Deprecated APIs
+
+The following APIs no longer function but are kept for historical reference.
+
+### :chart_with_upwards_trend: Historical VOTD Dashboards
 
 **Historical API call output | DOES NOT WORK ANYMORE**
 <br><br>Returns a list of the most recent VOTD winners from the page:
 <br>[https://public.tableau.com/en-us/gallery/?tab=viz-of-the-day&type=viz-of-the-day](https://public.tableau.com/en-us/gallery/?tab=viz-of-the-day&type=viz-of-the-day)
-<br><br>In addition there is a list of featured vizzes on the page 
+<br><br>In addition there is a list of featured vizzes on the page
 <br>[https://public.tableau.com/en-us/gallery/?tab=featured&type=featured](https://public.tableau.com/en-us/gallery/?tab=featured&type=featured)
 
 **Historical API call format | DOES NOT WORK ANYMORE**
@@ -283,19 +303,3 @@ In Feb 2023 a visibility parameter has been added,'&visibility=NON_HIDDEN' which
 
 **:floppy_disk: Dataset | NO LONGER UPDATED DUE API CHANGE**
 <br>Tableau Public's Viz of the Day : [Google Sheets](https://docs.google.com/spreadsheets/d/10Pm_1wnlUBwpWmLomY7U-yhL0wgLBdiQyeaaF3sV_J0/edit?usp=sharing)
-
-
-
-### :mag: Search Results
-
-**API call output**
-<br>Returns a list of the top search results for a given query as per the search page  [https://public.tableau.com/en-us/search/vizzes/](https://public.tableau.com/en-us/search/vizzes/)
-
-**API call format**
-<br>https://public.tableau.com/api/search/query?count= + **Number of Results** + &language=en-us&query= + **Search Term** +&start= + **Start at Viz Number** + &type= + **vizzes/authors**
-
-**Example API call**
-<br>Get top 100 Maps Search Results: [https://public.tableau.com/api/search/query?count=20&language=en-us&query=maps&start=0&type=vizzes
-](https://public.tableau.com/api/search/query?count=20&language=en-us&query=maps&start=0&type=vizzes
-)
-

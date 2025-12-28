@@ -28,22 +28,49 @@ jobs:
 
           {
             check_endpoint "Profile" "https://public.tableau.com/profile/api/wjsutton"
-            check_endpoint "Profile Categories" "https://public.tableau.com/public/apis/bff/v1/author/wjsutton/categories?startIndex=0&pageSize=10"
+            check_endpoint "Profile Categories" "https://public.tableau.com/public/apis/bff/v2/author/wjsutton/categories?startIndex=0&pageSize=12"
             check_endpoint "Workbooks" "https://public.tableau.com/public/apis/workbooks?profileName=wjsutton&start=0&count=10&visibility=NON_HIDDEN"
             check_endpoint "Followers" "https://public.tableau.com/profile/api/followers/wjsutton?count=10&index=0"
             check_endpoint "Following" "https://public.tableau.com/profile/api/following/wjsutton?count=10&index=0"
             check_endpoint "Favourites" "https://public.tableau.com/profile/api/favorite/wjsutton/workbook?"
+            check_endpoint "Workbook Image" "https://public.tableau.com/views/RunningforOlympicGold/RunningforOlympicGold.png?%3Adisplay_static_image=y&:showVizHome=n"
             check_endpoint "Workbook Thumbnail" "https://public.tableau.com/thumb/views/RunningforOlympicGold/RunningforOlympicGold"
             check_endpoint "Workbook Details" "https://public.tableau.com/profile/api/single_workbook/RunningforOlympicGold?"
             check_endpoint "Workbook Contents" "https://public.tableau.com/profile/api/workbook/RunningforOlympicGold?"
             check_endpoint "Related Workbooks" "https://public.tableau.com/public/apis/bff/workbooks/v2/RunningforOlympicGold/recommended-workbooks?count=5"
+            check_endpoint "Shared Workbooks" "https://public.tableau.com/profile/api/workbook/shared/3QJBD7FYC"
             check_endpoint "Featured Authors" "https://public.tableau.com/s/authors/list/feed?"
-            check_endpoint "VOTD Dashboards" "https://public.tableau.com/public/apis/bff/discover/v1/vizzes/viz-of-the-day?page=0&limit=5"
-            check_endpoint "Search Results" "https://public.tableau.com/api/search/query?count=5&language=en-us&query=maps&start=0&type=vizzes"
+            check_endpoint "VOTD Dashboards" "https://public.tableau.com/public/apis/bff/discover/v2/vizzes/viz-of-the-day?page=0&limit=12"
+            check_endpoint "Search Workbooks" "https://public.tableau.com/public/apis/bff/v1/search/query-workbooks?count=20&query=maps&start=0"
+            check_endpoint "Search Authors" "https://public.tableau.com/public/apis/bff/v1/search/query-authors?count=20&query=maps&start=0"
+            check_endpoint "Download Workbook" "https://public.tableau.com/workbooks/SuperMartSalesOverview.twb"
           } > api_status.txt
 
       - name: Generate status table
         run: |
+          get_anchor() {
+            case "$1" in
+              "Profile") echo "#bust_in_silhouette-profile" ;;
+              "Profile Categories") echo "#bust_in_silhouette-profile-categories" ;;
+              "Workbooks") echo "#books-workbooks" ;;
+              "Followers") echo "#busts_in_silhouette-followers" ;;
+              "Following") echo "#busts_in_silhouette-following" ;;
+              "Favourites") echo "#star-favourites" ;;
+              "Workbook Image") echo "#books-workbook-image" ;;
+              "Workbook Thumbnail") echo "#books-workbook-thumbnail" ;;
+              "Workbook Details") echo "#books-workbook-details" ;;
+              "Workbook Contents") echo "#books-workbook-contents" ;;
+              "Related Workbooks") echo "#books-related-workbooks" ;;
+              "Shared Workbooks") echo "#books-shared-workbooks" ;;
+              "Featured Authors") echo "#notebook-featured-authors" ;;
+              "VOTD Dashboards") echo "#chart_with_upwards_trend-votd-dashboards" ;;
+              "Search Workbooks") echo "#mag-search-workbooks" ;;
+              "Search Authors") echo "#mag-search-authors" ;;
+              "Download Workbook") echo "#arrow_down-download-workbook" ;;
+              *) echo "" ;;
+            esac
+          }
+
           TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M UTC')
           {
             echo "## 📊 API Status"
@@ -53,7 +80,12 @@ jobs:
             echo "| API Endpoint | Status |"
             echo "|--------------|--------|"
             while IFS='|' read -r name icon status; do
-              echo "| $name | $icon $status |"
+              anchor=$(get_anchor "$name")
+              if [ -n "$anchor" ]; then
+                echo "| [$name]($anchor) | $icon $status |"
+              else
+                echo "| $name | $icon $status |"
+              fi
             done < api_status.txt
             echo ""
             echo "---"
