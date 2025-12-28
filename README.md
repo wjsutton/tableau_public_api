@@ -223,18 +223,6 @@ In Feb 2023 a visibility parameter has been added,'&visibility=NON_HIDDEN' which
 **Example API call**
 <br>https://public.tableau.com/public/apis/bff/workbooks/v2/RunningforOlympicGold/recommended-workbooks?count=20
 
-### :books: Shared Workbooks
-*Discovered by a "friend of the repo"*
-
-**API call output**
-<br>Returns source workbook details for a shared workbook url.
-
-**API call format**
-<br>https://public.tableau.com/profile/api/workbook/shared/ + **Share_id** 
-
-**Example API call**
-<br>[https://public.tableau.com/profile/api/workbook/shared/3QJBD7FYC](https://public.tableau.com/profile/api/workbook/shared/3QJBD7FYC)
-
 ### :notebook: Featured Authors 
 
 **API call output**
@@ -328,3 +316,15 @@ The following APIs no longer function but are kept for historical reference.
 
 **:floppy_disk: Dataset | NO LONGER UPDATED DUE API CHANGE**
 <br>Tableau Public's Viz of the Day : [Google Sheets](https://docs.google.com/spreadsheets/d/10Pm_1wnlUBwpWmLomY7U-yhL0wgLBdiQyeaaF3sV_J0/edit?usp=sharing)
+
+### :books: Shared Workbooks
+*Discovered by a "friend of the repo"*
+
+**API call output**
+<br>Returns source workbook details for a shared workbook url.
+
+**API call format**
+<br>https://public.tableau.com/profile/api/workbook/shared/ + **Share_id**
+
+**Example API call**
+<br>[https://public.tableau.com/profile/api/workbook/shared/3QJBD7FYC](https://public.tableau.com/profile/api/workbook/shared/3QJBD7FYC)

@@ -38,7 +38,6 @@ jobs:
             check_endpoint "Workbook Details" "https://public.tableau.com/profile/api/single_workbook/RunningforOlympicGold?"
             check_endpoint "Workbook Contents" "https://public.tableau.com/profile/api/workbook/RunningforOlympicGold?"
             check_endpoint "Related Workbooks" "https://public.tableau.com/public/apis/bff/workbooks/v2/RunningforOlympicGold/recommended-workbooks?count=5"
-            check_endpoint "Shared Workbooks" "https://public.tableau.com/profile/api/workbook/shared/3QJBD7FYC"
             check_endpoint "Featured Authors" "https://public.tableau.com/s/authors/list/feed?"
             check_endpoint "VOTD Dashboards" "https://public.tableau.com/public/apis/bff/discover/v2/vizzes/viz-of-the-day?page=0&limit=12"
             check_endpoint "Search Workbooks" "https://public.tableau.com/public/apis/bff/v1/search/query-workbooks?count=20&query=maps&start=0"
@@ -61,7 +60,6 @@ jobs:
               "Workbook Details") echo "#books-workbook-details" ;;
               "Workbook Contents") echo "#books-workbook-contents" ;;
               "Related Workbooks") echo "#books-related-workbooks" ;;
-              "Shared Workbooks") echo "#books-shared-workbooks" ;;
               "Featured Authors") echo "#notebook-featured-authors" ;;
               "VOTD Dashboards") echo "#chart_with_upwards_trend-votd-dashboards" ;;
               "Search Workbooks") echo "#mag-search-workbooks" ;;
