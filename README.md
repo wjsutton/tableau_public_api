@@ -41,6 +41,27 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 - [Search Results](https://github.com/wjsutton/tableau_public_api#user-content-mag-search-results)
 
 <!-- API_STATUS_START -->
+## 📊 API Status
+
+Last checked: **2025-12-28 19:20 UTC**
+
+| API Endpoint | Status |
+|--------------|--------|
+| Profile | ✅ Operational |
+| Profile Categories | ❌ Down |
+| Workbooks | ✅ Operational |
+| Followers | ✅ Operational |
+| Following | ✅ Operational |
+| Favourites | ✅ Operational |
+| Workbook Thumbnail | ✅ Operational |
+| Workbook Details | ✅ Operational |
+| Workbook Contents | ✅ Operational |
+| Related Workbooks | ✅ Operational |
+| Featured Authors | ✅ Operational |
+| VOTD Dashboards | ❌ Down |
+| Search Results | ❌ Down |
+
+---
 <!-- API_STATUS_END -->
 
 ## :gift: Project Walkthroughs
