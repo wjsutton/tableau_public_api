@@ -40,6 +40,9 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 - [VOTD Dashboards](https://github.com/wjsutton/tableau_public_api#user-content-chart_with_upwards_trend-votd-dashboards)
 - [Search Results](https://github.com/wjsutton/tableau_public_api#user-content-mag-search-results)
 
+<!-- API_STATUS_START -->
+<!-- API_STATUS_END -->
+
 ## :gift: Project Walkthroughs
 - [2019-03-10, Jeffrey Shaffer's Using the Tableau Public API in 3 Easy Steps](https://www.dataplusscience.com/TableauPublicAPI.html)
 - [2019-05-13, Mark Reid's Tableau Public API blog post](https://datavis.blog/2019/05/13/tableau-public-api/)

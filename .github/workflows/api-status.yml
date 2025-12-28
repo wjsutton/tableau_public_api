@@ -1,0 +1,82 @@
+name: API Status Check
+
+on:
+  schedule:
+    - cron: '0 8 * * *'  # Runs daily at 8 AM UTC
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  check-api-status:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check API endpoints and generate status
+        run: |
+          check_endpoint() {
+            local name="$1"
+            local url="$2"
+            local response=$(curl -s -o /dev/null -w "%{http_code}" --max-time 30 "$url" 2>/dev/null)
+            if [ "$response" -ge 200 ] && [ "$response" -lt 400 ]; then
+              echo "$name|✅|Operational"
+            else
+              echo "$name|❌|Down"
+            fi
+          }
+
+          {
+            check_endpoint "Profile" "https://public.tableau.com/profile/api/wjsutton"
+            check_endpoint "Profile Categories" "https://public.tableau.com/public/apis/bff/v1/author/wjsutton/categories?startIndex=0&pageSize=10"
+            check_endpoint "Workbooks" "https://public.tableau.com/public/apis/workbooks?profileName=wjsutton&start=0&count=10&visibility=NON_HIDDEN"
+            check_endpoint "Followers" "https://public.tableau.com/profile/api/followers/wjsutton?count=10&index=0"
+            check_endpoint "Following" "https://public.tableau.com/profile/api/following/wjsutton?count=10&index=0"
+            check_endpoint "Favourites" "https://public.tableau.com/profile/api/favorite/wjsutton/workbook?"
+            check_endpoint "Workbook Thumbnail" "https://public.tableau.com/thumb/views/RunningforOlympicGold/RunningforOlympicGold"
+            check_endpoint "Workbook Details" "https://public.tableau.com/profile/api/single_workbook/RunningforOlympicGold?"
+            check_endpoint "Workbook Contents" "https://public.tableau.com/profile/api/workbook/RunningforOlympicGold?"
+            check_endpoint "Related Workbooks" "https://public.tableau.com/public/apis/bff/workbooks/v2/RunningforOlympicGold/recommended-workbooks?count=5"
+            check_endpoint "Featured Authors" "https://public.tableau.com/s/authors/list/feed?"
+            check_endpoint "VOTD Dashboards" "https://public.tableau.com/public/apis/bff/discover/v1/vizzes/viz-of-the-day?page=0&limit=5"
+            check_endpoint "Search Results" "https://public.tableau.com/api/search/query?count=5&language=en-us&query=maps&start=0&type=vizzes"
+          } > api_status.txt
+
+      - name: Generate status table
+        run: |
+          TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M UTC')
+          {
+            echo "## 📊 API Status"
+            echo ""
+            echo "Last checked: **$TIMESTAMP**"
+            echo ""
+            echo "| API Endpoint | Status |"
+            echo "|--------------|--------|"
+            while IFS='|' read -r name icon status; do
+              echo "| $name | $icon $status |"
+            done < api_status.txt
+            echo ""
+            echo "---"
+          } > status_section.md
+
+      - name: Update README
+        run: |
+          if grep -q "<!-- API_STATUS_START -->" README.md; then
+            sed -i '/<!-- API_STATUS_START -->/,/<!-- API_STATUS_END -->/c\<!-- API_STATUS_START -->\n<!-- API_STATUS_END -->' README.md
+            sed -i '/<!-- API_STATUS_START -->/r status_section.md' README.md
+          else
+            {
+              echo ""
+              echo "<!-- API_STATUS_START -->"
+              cat status_section.md
+              echo "<!-- API_STATUS_END -->"
+            } >> README.md
+          fi
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add README.md
+          git diff --staged --quiet || git commit -m "Update API status [skip ci]"
+          git push
