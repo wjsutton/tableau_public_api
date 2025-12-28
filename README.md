@@ -26,23 +26,27 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 <!-- API_STATUS_START -->
 ## 📊 API Status
 
-Last checked: **2025-12-28 19:20 UTC**
+Last checked: **2025-12-28 21:12 UTC**
 
 | API Endpoint | Status |
 |--------------|--------|
-| Profile | ✅ Operational |
-| Profile Categories | ❌ Down |
-| Workbooks | ✅ Operational |
-| Followers | ✅ Operational |
-| Following | ✅ Operational |
-| Favourites | ✅ Operational |
-| Workbook Thumbnail | ✅ Operational |
-| Workbook Details | ✅ Operational |
-| Workbook Contents | ✅ Operational |
-| Related Workbooks | ✅ Operational |
-| Featured Authors | ✅ Operational |
-| VOTD Dashboards | ❌ Down |
-| Search Results | ❌ Down |
+| [Profile](#bust_in_silhouette-profile) | ✅ Operational |
+| [Profile Categories](#bust_in_silhouette-profile-categories) | ✅ Operational |
+| [Workbooks](#books-workbooks) | ✅ Operational |
+| [Followers](#busts_in_silhouette-followers) | ✅ Operational |
+| [Following](#busts_in_silhouette-following) | ✅ Operational |
+| [Favourites](#star-favourites) | ✅ Operational |
+| [Workbook Image](#books-workbook-image) | ✅ Operational |
+| [Workbook Thumbnail](#books-workbook-thumbnail) | ✅ Operational |
+| [Workbook Details](#books-workbook-details) | ✅ Operational |
+| [Workbook Contents](#books-workbook-contents) | ✅ Operational |
+| [Related Workbooks](#books-related-workbooks) | ✅ Operational |
+| [Shared Workbooks](#books-shared-workbooks) | ❌ Down |
+| [Featured Authors](#notebook-featured-authors) | ✅ Operational |
+| [VOTD Dashboards](#chart_with_upwards_trend-votd-dashboards) | ✅ Operational |
+| [Search Workbooks](#mag-search-workbooks) | ✅ Operational |
+| [Search Authors](#mag-search-authors) | ✅ Operational |
+| [Download Workbook](#arrow_down-download-workbook) | ✅ Operational |
 
 ---
 <!-- API_STATUS_END -->
