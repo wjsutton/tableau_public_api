@@ -26,7 +26,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 <!-- API_STATUS_START -->
 ## 📊 API Status
 
-Last checked: **2025-12-29 08:27 UTC**
+Last checked: **2025-12-29 14:45 UTC**
 
 | API Endpoint | Status |
 |--------------|--------|
@@ -41,7 +41,9 @@ Last checked: **2025-12-29 08:27 UTC**
 | [Workbook Details](#books-workbook-details) | ✅ Operational |
 | [Workbook Contents](#books-workbook-contents) | ✅ Operational |
 | [Related Workbooks](#books-related-workbooks) | ✅ Operational |
-| [Featured Authors](#notebook-featured-authors) | ✅ Operational |
+| [Hall of Fame Visionaries](#notebook-hall-of-fame-visionaries) | ✅ Operational |
+| [Tableau Visionaries](#notebook-tableau-visionaries) | ✅ Operational |
+| [Tableau Ambassadors NA](#notebook-tableau-ambassadors-north-america) | ✅ Operational |
 | [VOTD Dashboards](#chart_with_upwards_trend-votd-dashboards) | ✅ Operational |
 | [Search Workbooks](#mag-search-workbooks) | ✅ Operational |
 | [Search Authors](#mag-search-authors) | ✅ Operational |
