@@ -198,16 +198,38 @@ In Feb 2023 a visibility parameter has been added,'&visibility=NON_HIDDEN' which
 **Example API call**
 <br>https://public.tableau.com/public/apis/bff/workbooks/v2/RunningforOlympicGold/recommended-workbooks?count=20
 
-### :notebook: Featured Authors 
+### :notebook: Hall of Fame Visionaries
 
 **API call output**
-<br>Returns a Tableau Public profile name and bio of their featured authors as JSON.
+<br>Returns a list of Tableau Hall of Fame Visionaries with their profile information as JSON.
 
 **API call format**
-<br>https://public.tableau.com/s/authors/list/feed? 
+<br>https://public.tableau.com/public/apis/bff/discover/v3/authors/hall-of-fame-visionaries?startIndex= + **Start Index** + &limit= + **Number of Results** (max 12)
 
 **Example API call**
-<br>[https://public.tableau.com/s/authors/list/feed?](https://public.tableau.com/s/authors/list/feed?)
+<br>[https://public.tableau.com/public/apis/bff/discover/v3/authors/hall-of-fame-visionaries?startIndex=0&limit=12](https://public.tableau.com/public/apis/bff/discover/v3/authors/hall-of-fame-visionaries?startIndex=0&limit=12)
+
+### :notebook: Tableau Visionaries
+
+**API call output**
+<br>Returns a list of Tableau Visionaries with their profile information as JSON.
+
+**API call format**
+<br>https://public.tableau.com/public/apis/bff/discover/v3/authors/tableau-visionaries?startIndex= + **Start Index** + &limit= + **Number of Results** (max 12)
+
+**Example API call**
+<br>[https://public.tableau.com/public/apis/bff/discover/v3/authors/tableau-visionaries?startIndex=0&limit=12](https://public.tableau.com/public/apis/bff/discover/v3/authors/tableau-visionaries?startIndex=0&limit=12)
+
+### :notebook: Tableau Ambassadors (North America)
+
+**API call output**
+<br>Returns a list of Tableau Ambassadors in North America with their profile information as JSON.
+
+**API call format**
+<br>https://public.tableau.com/public/apis/bff/discover/v1/author_channels/tableau-ambassadors-north-america
+
+**Example API call**
+<br>[https://public.tableau.com/public/apis/bff/discover/v1/author_channels/tableau-ambassadors-north-america](https://public.tableau.com/public/apis/bff/discover/v1/author_channels/tableau-ambassadors-north-america)
 
 
 ### :chart_with_upwards_trend: VOTD Dashboards
