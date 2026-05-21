@@ -26,7 +26,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 <!-- API_STATUS_START -->
 ## 📊 API Status
 
-Last checked: **2026-05-20 10:47 UTC**
+Last checked: **2026-05-21 11:18 UTC**
 
 | API Endpoint | Status |
 |--------------|--------|
@@ -36,7 +36,7 @@ Last checked: **2026-05-20 10:47 UTC**
 | [Followers](#busts_in_silhouette-followers) | ✅ Operational |
 | [Following](#busts_in_silhouette-following) | ✅ Operational |
 | [Favourites](#star-favourites) | ✅ Operational |
-| [Workbook Image](#books-workbook-image) | ❌ Down |
+| [Workbook Image](#books-workbook-image) | ✅ Operational |
 | [Workbook Thumbnail](#books-workbook-thumbnail) | ✅ Operational |
 | [Workbook Details](#books-workbook-details) | ✅ Operational |
 | [Workbook Contents](#books-workbook-contents) | ✅ Operational |
