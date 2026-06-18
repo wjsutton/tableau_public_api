@@ -30,7 +30,8 @@ Last checked: **2026-06-17 12:12 UTC**
 
 | API Endpoint | Status |
 |--------------|--------|
-| [Profile](#bust_in_silhouette-profile) | ✅ Operational |
+| [Author Profile](#bust_in_silhouette-author-profile) | ✅ Operational |
+| [Profile (Legacy)](#bust_in_silhouette-profile-legacy) | ✅ Operational |
 | [Profile Categories](#bust_in_silhouette-profile-categories) | ✅ Operational |
 | [Workbooks](#books-workbooks) | ✅ Operational |
 | [Followers](#busts_in_silhouette-followers) | ✅ Operational |
@@ -73,7 +74,27 @@ Last checked: **2026-06-17 12:12 UTC**
 
 ## :inbox_tray: Tableau Public API Calls 
 
-### :bust_in_silhouette: Profile
+### :bust_in_silhouette: Author Profile
+
+**API call output**
+<br>Retrieve a Tableau Public author's full profile as a JSON: profile counts (visible workbooks, followers, following), bio, organisation, pronouns, social/website links, and profile settings (e.g. freelance / "hire me"). In addition this newer call returns an `achievements` array covering the author's Tableau Public recognitions. This is intended as the replacement for the legacy [Profile](#bust_in_silhouette-profile-legacy) call.
+
+The `achievements` array contains one entry per achievement type, each with an `achievementType`, a `total`, and either a `years` array or a `workbooks` array:
+<br>- `VOTD` — Viz of the Day wins, as `workbooks` of `{ votdDateEpochMillis, workbookRepoUrl }`
+<br>- `VISIONARY` — `years` recognised as a Tableau Visionary
+<br>- `AMBASSADOR` — `years` recognised as a Tableau Ambassador
+<br>- `IRON_VIZ_WINNER` — Iron Viz championship wins, as `workbooks` of `{ year, workbookRepoUrl }`
+<br>- `IRON_VIZ_FINALIST` — Iron Viz finals appearances, as `workbooks` of `{ year, workbookRepoUrl }`
+
+**API call format**
+<br>https://public.tableau.com/public/apis/bff/v1/author-profile/ + **Tableau Public Username**
+
+**Example API call**
+<br>[https://public.tableau.com/public/apis/bff/v1/author-profile/wjsutton](https://public.tableau.com/public/apis/bff/v1/author-profile/wjsutton)
+
+### :bust_in_silhouette: Profile (Legacy)
+
+> **Legacy:** superseded by [Author Profile](#bust_in_silhouette-author-profile). Still functional but expected to be deactivated by Tableau Public in the future.
 
 **API call output**
 <br>Retrieve basic counts of workbooks, followers, following, favourites, details of websites, whether they have the "hire me" button on their profile (freelance), social media links and the last 21 workbooks associated to a Tableau Public username. Returned as a JSON.

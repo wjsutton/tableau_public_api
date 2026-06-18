@@ -27,7 +27,8 @@ jobs:
           }
 
           {
-            check_endpoint "Profile" "https://public.tableau.com/profile/api/wjsutton"
+            check_endpoint "Author Profile" "https://public.tableau.com/public/apis/bff/v1/author-profile/wjsutton"
+            check_endpoint "Profile (Legacy)" "https://public.tableau.com/profile/api/wjsutton"
             check_endpoint "Profile Categories" "https://public.tableau.com/public/apis/bff/v2/author/wjsutton/categories?startIndex=0&pageSize=12"
             check_endpoint "Workbooks" "https://public.tableau.com/public/apis/workbooks?profileName=wjsutton&start=0&count=10&visibility=NON_HIDDEN"
             check_endpoint "Followers" "https://public.tableau.com/profile/api/followers/wjsutton?count=10&index=0"
@@ -51,7 +52,8 @@ jobs:
         run: |
           get_anchor() {
             case "$1" in
-              "Profile") echo "#bust_in_silhouette-profile" ;;
+              "Author Profile") echo "#bust_in_silhouette-author-profile" ;;
+              "Profile (Legacy)") echo "#bust_in_silhouette-profile-legacy" ;;
               "Profile Categories") echo "#bust_in_silhouette-profile-categories" ;;
               "Workbooks") echo "#books-workbooks" ;;
               "Followers") echo "#busts_in_silhouette-followers" ;;
