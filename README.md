@@ -26,7 +26,7 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 <!-- API_STATUS_START -->
 ## 📊 API Status
 
-Last checked: **2026-10-09 14:55 UTC**
+Last checked: **2026-10-10 14:10 UTC**
 
 | API Endpoint | Status |
 |--------------|--------|
@@ -46,8 +46,8 @@ Last checked: **2026-10-09 14:55 UTC**
 | [Tableau Visionaries](#notebook-tableau-visionaries) | ✅ Operational |
 | [Tableau Ambassadors NA](#notebook-tableau-ambassadors-north-america) | ✅ Operational |
 | [VOTD Dashboards](#chart_with_upwards_trend-votd-dashboards) | ✅ Operational |
-| [Search Workbooks](#mag-search-workbooks) | ✅ Operational |
-| [Search Authors](#mag-search-authors) | ✅ Operational |
+| [Search Workbooks](#mag-search-workbooks) | ❌ Down |
+| [Search Authors](#mag-search-authors) | ❌ Down |
 | [Download Workbook](#arrow_down-download-workbook) | ✅ Operational |
 
 ---
