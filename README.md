@@ -26,29 +26,22 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 <!-- API_STATUS_START -->
 ## 📊 API Status
 
-Last checked: **2026-11-07 14:37 UTC**
+Last checked: **2026-11-08 14:43 UTC**
 
-| API Endpoint | Status |
-|--------------|--------|
-| [Author Profile](#bust_in_silhouette-author-profile) | ✅ Operational |
-| [Profile (Legacy)](#bust_in_silhouette-profile-legacy) | ✅ Operational |
-| [Profile Categories](#bust_in_silhouette-profile-categories) | ✅ Operational |
-| [Workbooks](#books-workbooks) | ✅ Operational |
-| [Followers](#busts_in_silhouette-followers) | ✅ Operational |
-| [Following](#busts_in_silhouette-following) | ✅ Operational |
-| [Favourites](#star-favourites) | ✅ Operational |
-| [Workbook Image](#books-workbook-image) | ✅ Operational |
-| [Workbook Thumbnail](#books-workbook-thumbnail) | ✅ Operational |
-| [Workbook Details](#books-workbook-details) | ✅ Operational |
-| [Workbook Contents](#books-workbook-contents) | ✅ Operational |
-| [Related Workbooks](#books-related-workbooks) | ✅ Operational |
-| [Hall of Fame Visionaries](#notebook-hall-of-fame-visionaries) | ✅ Operational |
-| [Tableau Visionaries](#notebook-tableau-visionaries) | ✅ Operational |
-| [Tableau Ambassadors NA](#notebook-tableau-ambassadors-north-america) | ✅ Operational |
-| [VOTD Dashboards](#chart_with_upwards_trend-votd-dashboards) | ✅ Operational |
-| [Search Workbooks](#mag-search-workbooks) | ❌ Down |
-| [Search Authors](#mag-search-authors) | ❌ Down |
-| [Download Workbook](#arrow_down-download-workbook) | ✅ Operational |
+| API Endpoint | Status | API Endpoint | Status |
+|--------------|--------|--------------|--------|
+| [Author Profile](#bust_in_silhouette-author-profile) | ✅ Operational | [Workbook Lineage](#books-workbook-lineage) | ✅ Operational |
+| [Profile (Legacy)](#bust_in_silhouette-profile-legacy) | ✅ Operational | [Hall of Fame Visionaries](#notebook-hall-of-fame-visionaries) | ✅ Operational |
+| [Profile Categories](#bust_in_silhouette-profile-categories) | ✅ Operational | [Tableau Visionaries](#notebook-tableau-visionaries) | ✅ Operational |
+| [Workbooks](#books-workbooks) | ✅ Operational | [Tableau Ambassadors NA](#notebook-tableau-ambassadors-north-america) | ✅ Operational |
+| [Followers](#busts_in_silhouette-followers) | ✅ Operational | [VOTD Dashboards](#chart_with_upwards_trend-votd-dashboards) | ✅ Operational |
+| [Following](#busts_in_silhouette-following) | ✅ Operational | [Search Workbooks](#mag-search-workbooks) | ✅ Operational |
+| [Favourites](#star-favourites) | ✅ Operational | [Search Authors](#mag-search-authors) | ✅ Operational |
+| [Workbook Image](#books-workbook-image) | ✅ Operational | [Search Data Sources](#mag-search-data-sources) | ✅ Operational |
+| [Workbook Thumbnail](#books-workbook-thumbnail) | ✅ Operational | [Search Result Counts](#mag-search-result-counts) | ✅ Operational |
+| [Workbook Details](#books-workbook-details) | ✅ Operational | [Trending Vizzes](#fire-trending-vizzes) | ✅ Operational |
+| [Workbook Contents](#books-workbook-contents) | ✅ Operational | [Author Profile Card](#bust_in_silhouette-author-profile-card) | ✅ Operational |
+| [Related Workbooks](#books-related-workbooks) | ✅ Operational | [Download Workbook](#arrow_down-download-workbook) | ✅ Operational |
 
 ---
 <!-- API_STATUS_END -->
