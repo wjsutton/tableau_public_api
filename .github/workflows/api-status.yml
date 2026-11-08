@@ -89,16 +89,22 @@ jobs:
             echo ""
             echo "Last checked: **$TIMESTAMP**"
             echo ""
-            echo "| API Endpoint | Status |"
-            echo "|--------------|--------|"
+            # Format each result as "endpoint | status", then lay them out in two side-by-side columns
+            cells=()
             while IFS='|' read -r name icon status; do
               anchor=$(get_anchor "$name")
               if [ -n "$anchor" ]; then
-                echo "| [$name]($anchor) | $icon $status |"
+                cells+=("[$name]($anchor) | $icon $status")
               else
-                echo "| $name | $icon $status |"
+                cells+=("$name | $icon $status")
               fi
             done < api_status.txt
+            half=$(( (${#cells[@]} + 1) / 2 ))
+            echo "| API Endpoint | Status | API Endpoint | Status |"
+            echo "|--------------|--------|--------------|--------|"
+            for (( i=0; i<half; i++ )); do
+              echo "| ${cells[$i]} | ${cells[$((i + half))]:- | } |"
+            done
             echo ""
             echo "---"
           } > status_section.md
