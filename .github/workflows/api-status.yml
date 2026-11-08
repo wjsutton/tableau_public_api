@@ -8,6 +8,9 @@ on:
 jobs:
   check-api-status:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
     
     steps:
       - name: Checkout repository
@@ -22,7 +25,7 @@ jobs:
             if [ "$response" -ge 200 ] && [ "$response" -lt 400 ]; then
               echo "$name|✅|Operational"
             else
-              echo "$name|❌|Down"
+              echo "$name|❌|Down ($response)"
             fi
           }
 
@@ -132,3 +135,18 @@ jobs:
           git add README.md
           git diff --staged --quiet || git commit -m "Update API status [skip ci]"
           git push
+
+      - name: Open or update an issue for failing endpoints
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          down=$(grep '|❌|' api_status.txt | cut -d'|' -f1,3 | sed 's/|/ - /; s/^/- /')
+          [ -z "$down" ] && exit 0
+          title="API status: endpoints down"
+          body=$(printf 'Failing on %s:\n\n%s\n\nRun the api-review skill to investigate.' "$(date -u '+%Y-%m-%d')" "$down")
+          number=$(gh issue list --state open --search "\"$title\" in:title" --json number -q '.[0].number')
+          if [ -n "$number" ]; then
+            gh issue comment "$number" --body "$body"
+          else
+            gh issue create --title "$title" --body "$body"
+          fi
