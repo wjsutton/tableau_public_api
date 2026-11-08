@@ -38,13 +38,18 @@ jobs:
             check_endpoint "Workbook Thumbnail" "https://public.tableau.com/thumb/views/RunningforOlympicGold/RunningforOlympicGold"
             check_endpoint "Workbook Details" "https://public.tableau.com/profile/api/single_workbook/RunningforOlympicGold?"
             check_endpoint "Workbook Contents" "https://public.tableau.com/profile/api/workbook/RunningforOlympicGold?"
-            check_endpoint "Related Workbooks" "https://public.tableau.com/public/apis/bff/workbooks/v2/RunningforOlympicGold/recommended-workbooks?count=5"
+            check_endpoint "Related Workbooks" "https://public.tableau.com/public/apis/bff/v3/workbooks/RunningforOlympicGold/recommended-workbooks?count=12"
+            check_endpoint "Workbook Lineage" "https://public.tableau.com/public/apis/workbook/CurriculumVitae-Resume/lineage"
             check_endpoint "Hall of Fame Visionaries" "https://public.tableau.com/public/apis/bff/discover/v3/authors/hall-of-fame-visionaries?startIndex=0&limit=12"
             check_endpoint "Tableau Visionaries" "https://public.tableau.com/public/apis/bff/discover/v3/authors/tableau-visionaries?startIndex=0&limit=12"
             check_endpoint "Tableau Ambassadors NA" "https://public.tableau.com/public/apis/bff/discover/v1/author_channels/tableau-ambassadors-north-america"
-            check_endpoint "VOTD Dashboards" "https://public.tableau.com/public/apis/bff/discover/v2/vizzes/viz-of-the-day?page=0&limit=12"
-            check_endpoint "Search Workbooks" "https://public.tableau.com/public/apis/bff/v1/search/query-workbooks?count=20&query=maps&start=0"
-            check_endpoint "Search Authors" "https://public.tableau.com/public/apis/bff/v1/search/query-authors?count=20&query=maps&start=0"
+            check_endpoint "VOTD Dashboards" "https://public.tableau.com/public/apis/bff/discover/v2/vizzes/viz-of-the-day?startIndex=0&limit=12"
+            check_endpoint "Search Workbooks" "https://public.tableau.com/public/apis/bff/v2/search/query-workbooks?count=20&query=maps&start=0"
+            check_endpoint "Search Authors" "https://public.tableau.com/public/apis/bff/v3/search/query-authors?count=20&query=maps&start=0"
+            check_endpoint "Search Data Sources" "https://public.tableau.com/public/apis/bff/v1/search/query-datasources?count=20&query=superstore&start=0&type=data-sources"
+            check_endpoint "Search Result Counts" "https://public.tableau.com/public/apis/bff/v1/search/facets?query=pokemon"
+            check_endpoint "Trending Vizzes" "https://public.tableau.com/public/apis/bff/v1/trending"
+            check_endpoint "Author Profile Card" "https://public.tableau.com/public/apis/bff/v1/author-profile/wjsutton"
             check_endpoint "Download Workbook" "https://public.tableau.com/workbooks/SuperMartSalesOverview.twb"
           } > api_status.txt
 
@@ -64,12 +69,17 @@ jobs:
               "Workbook Details") echo "#books-workbook-details" ;;
               "Workbook Contents") echo "#books-workbook-contents" ;;
               "Related Workbooks") echo "#books-related-workbooks" ;;
+              "Workbook Lineage") echo "#books-workbook-lineage" ;;
               "Hall of Fame Visionaries") echo "#notebook-hall-of-fame-visionaries" ;;
               "Tableau Visionaries") echo "#notebook-tableau-visionaries" ;;
               "Tableau Ambassadors NA") echo "#notebook-tableau-ambassadors-north-america" ;;
               "VOTD Dashboards") echo "#chart_with_upwards_trend-votd-dashboards" ;;
               "Search Workbooks") echo "#mag-search-workbooks" ;;
               "Search Authors") echo "#mag-search-authors" ;;
+              "Search Data Sources") echo "#mag-search-data-sources" ;;
+              "Search Result Counts") echo "#mag-search-result-counts" ;;
+              "Trending Vizzes") echo "#fire-trending-vizzes" ;;
+              "Author Profile Card") echo "#bust_in_silhouette-author-profile-card" ;;
               "Download Workbook") echo "#arrow_down-download-workbook" ;;
               *) echo "" ;;
             esac

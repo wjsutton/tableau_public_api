@@ -6,22 +6,17 @@ import re
 
 # Do an API call to find the total number of VOTDs for loop
 http = urllib3.PoolManager()
-votd = json.loads(http.request('GET',"https://public.tableau.com/api/gallery?page=0&count=100&galleryType=viz-of-the-day&language=any").data)
-votd_count = votd['totalItems']
-
-# Number of pages for VOTD loop
-end = int(votd_count/100) + 1
-pages = range(end)
-
 # initialise dataframe
 votd_df =[]
 
-# Loop and extract VOTD data
-for i in pages:
-    print(i)
-    votd = json.loads(http.request('GET',"https://public.tableau.com/api/gallery?page=" + str(i) + "&count=100&galleryType=viz-of-the-day&language=any").data)
-    df = pd.json_normalize(votd['items'], max_level=1)
+# Loop and extract VOTD data (API only allows limit=1 or 12; next == -1 at the end)
+start = 0
+while start != -1:
+    print(start)
+    votd = json.loads(http.request('GET',"https://public.tableau.com/public/apis/bff/discover/v2/vizzes/viz-of-the-day?startIndex=" + str(start) + "&limit=12").data)
+    df = pd.json_normalize(votd['contents'], max_level=1)
     votd_df.append(df)
+    start = votd['next']
 
 # Combine data frames from loop
 votd_df = pd.concat(votd_df)

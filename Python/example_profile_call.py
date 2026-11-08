@@ -17,24 +17,12 @@ tableau_profile = json.loads(http.request('GET',profile_call).data)
 profile = pd.json_normalize(tableau_profile, max_level=0)
 #address = pd.json_normalize(tableau_profile['address'], max_level=0)
 websites = pd.json_normalize(tableau_profile['websites'], max_level=0)
-workbooks = pd.json_normalize(tableau_profile['workbooks'], max_level=0)
+workbooks_call = 'https://public.tableau.com/public/apis/workbooks?profileName=' + your_username + '&start=0&count=50&visibility=NON_HIDDEN'
+workbooks = pd.json_normalize(json.loads(http.request('GET',workbooks_call).data)['contents'], max_level=0)
 
 
-# Finding attributions and merging to workbooks
-attributions_df = []
-for i in workbooks.index:
-    attributions = pd.json_normalize(workbooks['attributions'][i])
-    if len(attributions) > 0:
-        attributions.columns = 'attribution_' + attributions.columns
-        attributions['workbookRepoUrl'] = workbooks['workbookRepoUrl'][i]
-        attributions_df.append(attributions)
-
-if len(attributions_df) > 0:
-    attributions_df = pd.concat(attributions_df)
-    workbooks = pd.merge(workbooks,attributions_df, on='workbookRepoUrl', how='left')
 
 del profile['websites']
-del profile['workbooks']
 
 print(workbooks)
 
