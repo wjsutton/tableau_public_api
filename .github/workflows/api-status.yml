@@ -143,7 +143,7 @@ jobs:
           down=$(grep '|❌|' api_status.txt | cut -d'|' -f1,3 | sed 's/|/ - /; s/^/- /')
           [ -z "$down" ] && exit 0
           title="API status: endpoints down"
-          body=$(printf 'Failing on %s:\n\n%s\n\nRun the api-review skill to investigate.' "$(date -u '+%Y-%m-%d')" "$down")
+          body=$(printf 'Failing on %s:\n\n%s' "$(date -u '+%Y-%m-%d')" "$down")
           number=$(gh issue list --state open --search "\"$title\" in:title" --json number -q '.[0].number')
           if [ -n "$number" ]; then
             gh issue comment "$number" --body "$body"
