@@ -15,7 +15,8 @@ get_tableau_profile_api_extract <- function(profile_name){
   profile_twitter <- profile_data$websites$url[grepl('twitter',profile_data$websites$url)]
   profile_linkedin <- profile_data$websites$url[grepl('linkedin',profile_data$websites$url)]
   
-  profile_last_publish <- profile_data$lastPublishDate
+  latest_wb <- jsonlite::fromJSON(paste0('https://public.tableau.com/public/apis/workbooks?profileName=',profile_name,'&start=0&count=1&visibility=NON_HIDDEN'))$contents$workbookRepoUrl
+  profile_last_publish <- jsonlite::fromJSON(paste0('https://public.tableau.com/profile/api/single_workbook/',latest_wb,'?'))$lastPublishDate
   profile_visible_workbooks <- profile_data$visibleWorkbookCount
   
   profile_following <- ifelse(length(profile_following)==1,profile_following,0)

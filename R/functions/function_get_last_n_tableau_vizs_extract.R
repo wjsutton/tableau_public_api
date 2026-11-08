@@ -4,10 +4,10 @@ library(dplyr)
 get_last_n_tableau_vizs_extract <- function(profile_name,n){
   
   
-  profile_call <- paste0('https://public.tableau.com/profile/api/',profile_name)
-  profile_data <- jsonlite::fromJSON(profile_call)
-  
-  visible_workbooks <- filter(profile_data$workbooks,showInProfile==TRUE)
+  workbooks_call <- paste0('https://public.tableau.com/public/apis/workbooks?profileName=',profile_name,'&start=0&count=',n,'&visibility=NON_HIDDEN')
+  visible_workbooks <- jsonlite::fromJSON(workbooks_call)$contents
+  visible_workbooks$lastPublishDate <- sapply(visible_workbooks$workbookRepoUrl, function(w)
+    jsonlite::fromJSON(paste0('https://public.tableau.com/profile/api/single_workbook/',w,'?'))$lastPublishDate)
   
   profile_workbooks <- paste0('https://public.tableau.com/profile/',profile_name,'#!/vizhome/',gsub('/sheets/','/',visible_workbooks$defaultViewRepoUrl))
   workbooks_last_publish <- visible_workbooks$lastPublishDate

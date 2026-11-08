@@ -5,9 +5,9 @@ import math
 
 http = urllib3.PoolManager()
 
-fa_call = 'https://public.tableau.com/s/authors/list/feed?'
+fa_call = 'https://public.tableau.com/public/apis/bff/discover/v3/authors/tableau-visionaries?startIndex=0&limit=12'
 fa_json = json.loads(http.request('GET',fa_call).data)
-featured_authors = pd.json_normalize(fa_json['authors'])
+featured_authors = pd.json_normalize(fa_json['contents'], max_level=0)
 
 n_featured_authors = len(featured_authors)
 author_loops = range(n_featured_authors)
@@ -18,13 +18,13 @@ websites_df =[]
 workbook_df =[]
 
 for i in range(n_featured_authors):
-    your_username = featured_authors['profile_name'][i]
-    print("Working on " + featured_authors['profile_name'][i] +"'s profile")
+    your_username = featured_authors['profileName'][i]
+    print("Working on " + featured_authors['profileName'][i] +"'s profile")
     profile_call = "https://public.tableau.com/profile/api/" + your_username
 
     tableau_profile = json.loads(http.request('GET',profile_call).data)
     profile = pd.json_normalize(tableau_profile, max_level=0)
-    profile['author_description'] = featured_authors['author_description'][i]
+    profile['author_description'] = featured_authors['bio'][i]
 
     del profile['websites']
     if 'address' in profile.columns:
@@ -54,22 +54,13 @@ workbook_df = pd.concat(workbook_df)
 websites_df = pd.concat(websites_df)
 
 # Get VOTD data
-votd = json.loads(http.request('GET',"https://public.tableau.com/api/gallery?page=0&count=100&galleryType=viz-of-the-day&language=any").data)
-votd_count = votd['totalItems']
-
-# Number of pages for VOTD loop
-end = math.ceil(votd_count/100)
-pages = range(end)
-
-# initialise dataframe
 votd_df =[]
-
-# Loop and extract VOTD data
-for i in pages:
-    print('Getting VOTDs page: ' + str(i))
-    votd = json.loads(http.request('GET',"https://public.tableau.com/api/gallery?page=" + str(i) + "&count=100&galleryType=viz-of-the-day&language=any").data)
-    df = pd.json_normalize(votd['items'], max_level=1)
-    votd_df.append(df)
+start = 0
+while start != -1:
+    print('Getting VOTDs from index: ' + str(start))
+    votd = json.loads(http.request('GET',"https://public.tableau.com/public/apis/bff/discover/v2/vizzes/viz-of-the-day?startIndex=" + str(start) + "&limit=12").data)
+    votd_df.append(pd.json_normalize(votd['contents'], max_level=1))
+    start = votd['next']
 
 # Combine data frames from loop
 votd_df = pd.concat(votd_df)

@@ -45,12 +45,23 @@ Thanks to Jeffrey Shaffer's [blog post](https://www.dataplusscience.com/TableauP
 ## :floppy_disk: Data sets
 - Tableau Public's Viz of the Day : [Google Sheets](https://docs.google.com/spreadsheets/d/10Pm_1wnlUBwpWmLomY7U-yhL0wgLBdiQyeaaF3sV_J0/edit?usp=sharing)
 
+## :computer: Code Examples
+- [Python/example_profile_call.py](Python/example_profile_call.py) - get a user's profile, websites and workbooks
+- [Python/search_example.py](Python/search_example.py) - search for workbooks
+- [Python/get_votd_data.py](Python/get_votd_data.py) - get every Viz of the Day
+- [Python/get_featured_authors.py](Python/get_featured_authors.py) - get Tableau Visionaries, their workbooks and VOTDs
+- [Python/build_profile_gallery.py](Python/build_profile_gallery.py) - build an HTML gallery page of a user's vizzes
+- [Python/tableau_public_sign_in.py](Python/tableau_public_sign_in.py) - sign in and use the [signed-in API calls](#lock-signed-in-api-calls)
+- [R/functions](R/functions) - R functions for profiles, workbooks, VOTDs, favourites and viz images
+
 ## :inbox_tray: Tableau Public API Calls 
 
 ### :bust_in_silhouette: Profile
 
 **API call output**
-<br>Retrieve basic counts of workbooks, followers, following, favourites, details of websites, whether they have the "hire me" button on their profile (freelance), social media links and the last 21 workbooks associated to a Tableau Public username. Returned as a JSON.
+<br>Retrieve basic counts of workbooks, followers, following, favourites, details of websites, whether they have the "hire me" button on their profile (freelance), social media links, bio and banner details associated to a Tableau Public username. Returned as a JSON.
+
+Note workbooks are no longer included in this call, use [Workbooks](#books-workbooks) instead.
 
 **API call format**
 <br>https://public.tableau.com/profile/api/ + **Tableau Public Username** 
@@ -190,13 +201,24 @@ In Feb 2023 a visibility parameter has been added,'&visibility=NON_HIDDEN' which
 *Discovered by Chris Meardon*
 
 **API call output**
-<br>Returns a list of workbooks (max 20) related to a queried workbook.
+<br>Returns a list of workbooks (max 12) related to a queried workbook.
 
 **API call format**
-<br>https://public.tableau.com/public/apis/bff/workbooks/v2/ + **Workbook Repo Url** /recommended-workbooks? + count= **n**
+<br>https://public.tableau.com/public/apis/bff/v3/workbooks/ + **Workbook Repo Url** + /recommended-workbooks?count= + **n**
 
 **Example API call**
-<br>https://public.tableau.com/public/apis/bff/workbooks/v2/RunningforOlympicGold/recommended-workbooks?count=20
+<br>[https://public.tableau.com/public/apis/bff/v3/workbooks/RunningforOlympicGold/recommended-workbooks?count=12](https://public.tableau.com/public/apis/bff/v3/workbooks/RunningforOlympicGold/recommended-workbooks?count=12)
+
+### :books: Workbook Lineage
+
+**API call output**
+<br>If a workbook was downloaded and republished from someone else's viz, returns the workbook it was based on and the original author, shown as "Based on..." in the viz details. Each item has an `author`, a `workbook` and whether they still exist (`authorState`, `workbookState`). Returns an empty list for original workbooks.
+
+**API call format**
+<br>https://public.tableau.com/public/apis/workbook/ + **Workbook Repo Url** + /lineage
+
+**Example API call**
+<br>[https://public.tableau.com/public/apis/workbook/CurriculumVitae-Resume/lineage](https://public.tableau.com/public/apis/workbook/CurriculumVitae-Resume/lineage)
 
 ### :notebook: Hall of Fame Visionaries
 
@@ -239,17 +261,13 @@ In Feb 2023 a visibility parameter has been added,'&visibility=NON_HIDDEN' which
 <br>Returns a list of the most recent VOTD winners from the page [https://public.tableau.com/app/discover/viz-of-the-day](https://public.tableau.com/app/discover/viz-of-the-day)
 
 **API call format**
-<br>https://public.tableau.com/public/apis/bff/discover/v2/vizzes/viz-of-the-day?page= + **Page Number** + &limit= + **Number of VOTDs** (max 12)
+<br>https://public.tableau.com/public/apis/bff/discover/v2/vizzes/viz-of-the-day?startIndex= + **Start Index** + &limit= + **Number of VOTDs** (1 or 12)
 <br>
-<i>Note to get all VOTDs you will need to iterate through page numbers, increasing by one until no more results are returned.</i>
-<i>In addition the parameter 'startIndex' may be used instead of 'page'</i>
+<i>Note to get all VOTDs you will need to iterate through startIndex, increasing by 12 until the `next` value returned is -1.</i>
 
 **Example API call**
-<br>Get last 12 VOTDs: [https://public.tableau.com/public/apis/bff/discover/v2/vizzes/viz-of-the-day?page=0&limit=12
-](https://public.tableau.com/public/apis/bff/discover/v2/vizzes/viz-of-the-day?page=0&limit=12)
-<br>Get next 12 VOTDs: [https://public.tableau.com/public/apis/bff/discover/v2/vizzes/viz-of-the-day?page=1&limit=12
-](https://public.tableau.com/public/apis/bff/discover/v2/vizzes/viz-of-the-day?page=1&limit=12
-)
+<br>Get last 12 VOTDs: [https://public.tableau.com/public/apis/bff/discover/v2/vizzes/viz-of-the-day?startIndex=0&limit=12](https://public.tableau.com/public/apis/bff/discover/v2/vizzes/viz-of-the-day?startIndex=0&limit=12)
+<br>Get next 12 VOTDs: [https://public.tableau.com/public/apis/bff/discover/v2/vizzes/viz-of-the-day?startIndex=12&limit=12](https://public.tableau.com/public/apis/bff/discover/v2/vizzes/viz-of-the-day?startIndex=12&limit=12)
 
 ### :mag: Search Workbooks
 
@@ -257,11 +275,10 @@ In Feb 2023 a visibility parameter has been added,'&visibility=NON_HIDDEN' which
 <br>Returns a list of the top workbook search results for a given query.
 
 **API call format**
-<br>https://public.tableau.com/public/apis/bff/v1/search/query-workbooks?count= + **Number of Results** + &query= + **Search Term** + &start= + **Start at Viz Number**
+<br>https://public.tableau.com/public/apis/bff/v2/search/query-workbooks?count= + **Number of Results** + &query= + **Search Term** + &start= + **Start at Viz Number**
 
 **Example API call**
-<br>[https://public.tableau.com/public/apis/bff/v1/search/query-workbooks?count=20&query=maps&start=0](https://public.tableau.com/public/apis/bff/v1/search/query-workbooks?count=20&query=maps&start=0)
-
+<br>[https://public.tableau.com/public/apis/bff/v2/search/query-workbooks?count=20&query=maps&start=0](https://public.tableau.com/public/apis/bff/v2/search/query-workbooks?count=20&query=maps&start=0)
 
 ### :mag: Search Authors
 
@@ -269,10 +286,54 @@ In Feb 2023 a visibility parameter has been added,'&visibility=NON_HIDDEN' which
 <br>Returns a list of the top author search results for a given query.
 
 **API call format**
-<br>https://public.tableau.com/public/apis/bff/v1/search/query-authors?count= + **Number of Results** + &query= + **Search Term** + &start= + **Start at Author Number**
+<br>https://public.tableau.com/public/apis/bff/v3/search/query-authors?count= + **Number of Results** + &query= + **Search Term** + &start= + **Start at Author Number**
 
 **Example API call**
-<br>[https://public.tableau.com/public/apis/bff/v1/search/query-authors?count=20&query=maps&start=0](https://public.tableau.com/public/apis/bff/v1/search/query-authors?count=20&query=maps&start=0)
+<br>[https://public.tableau.com/public/apis/bff/v3/search/query-authors?count=20&query=maps&start=0](https://public.tableau.com/public/apis/bff/v3/search/query-authors?count=20&query=maps&start=0)
+
+### :mag: Search Data Sources
+
+**API call output**
+<br>Returns a list of the top published data source search results for a given query, including how many workbooks use each data source.
+
+**API call format**
+<br>https://public.tableau.com/public/apis/bff/v1/search/query-datasources?count= + **Number of Results** + &query= + **Search Term** + &start= + **Start at Data Source Number** + &type=data-sources
+
+**Example API call**
+<br>[https://public.tableau.com/public/apis/bff/v1/search/query-datasources?count=20&query=superstore&start=0&type=data-sources](https://public.tableau.com/public/apis/bff/v1/search/query-datasources?count=20&query=superstore&start=0&type=data-sources)
+
+### :mag: Search Result Counts
+
+**API call output**
+<br>Returns the number of vizzes, authors and data sources found for a given query.
+
+**API call format**
+<br>https://public.tableau.com/public/apis/bff/v1/search/facets?query= + **Search Term**
+
+**Example API call**
+<br>[https://public.tableau.com/public/apis/bff/v1/search/facets?query=pokemon](https://public.tableau.com/public/apis/bff/v1/search/facets?query=pokemon)
+
+### :fire: Trending Vizzes
+
+**API call output**
+<br>Returns a list of the vizzes currently trending on Tableau Public, with view counts, favourites and reactions. Returned as a JSON.
+
+**API call format**
+<br>https://public.tableau.com/public/apis/bff/v1/trending
+
+**Example API call**
+<br>[https://public.tableau.com/public/apis/bff/v1/trending](https://public.tableau.com/public/apis/bff/v1/trending)
+
+### :bust_in_silhouette: Author Profile Card
+
+**API call output**
+<br>Retrieve the details shown at the top of a user's profile: name, bio, avatar, banner, featured viz, and counts of workbooks, data sources and followers. Returned as a JSON.
+
+**API call format**
+<br>https://public.tableau.com/public/apis/bff/v1/author-profile/ + **Tableau Public Username**
+
+**Example API call**
+<br>[https://public.tableau.com/public/apis/bff/v1/author-profile/wjsutton](https://public.tableau.com/public/apis/bff/v1/author-profile/wjsutton)
 
 ### :arrow_down: Download Workbook
 
@@ -284,6 +345,84 @@ In Feb 2023 a visibility parameter has been added,'&visibility=NON_HIDDEN' which
 
 **Example API call**
 <br>[https://public.tableau.com/workbooks/SuperMartSalesOverview.twb](https://public.tableau.com/workbooks/SuperMartSalesOverview.twb)
+
+## :lock: Signed-in API Calls
+
+These API calls need you to be signed in to Tableau Public, and only return data for your own account.
+
+### :key: Signing In
+
+**How to sign in**
+<br>Tableau Public doesn't have API keys or tokens, so you sign in through a browser. [Python/tableau_public_sign_in.py](Python/tableau_public_sign_in.py) opens a Chrome window for you to sign in, then makes the API calls from that browser. You only need to sign in once, the session is saved in `~/.tableau-public-python` (delete this folder to sign out).
+
+**Setup**
+```
+pip install playwright
+python Python/tableau_public_sign_in.py
+```
+
+**Python example**
+```python
+from tableau_public_sign_in import tableau_public_session, call_api
+
+with tableau_public_session() as page:
+    status, author = call_api(page, '/profile/api/auth/author')
+    print('Signed in as', author['profileName'])
+```
+
+### :bust_in_silhouette: Signed-in Author
+
+**API call output**
+<br>Retrieve the profile of the signed-in user, including workbook count, storage used and storage limit. Returned as a JSON.
+
+**API call format**
+<br>https://public.tableau.com/profile/api/auth/author
+
+**Python example**
+```python
+with tableau_public_session() as page:
+    status, author = call_api(page, '/profile/api/auth/author')
+    print(author['totalWorkbookCount'], 'workbooks,', round(author['usedStorage'] / 1e9, 2), 'GB used')
+```
+
+### :see_no_evil: Hidden Workbooks
+
+**API call output**
+<br>Retrieves details of your hidden workbooks, 50 at a time. Returned as a JSON in the same format as [Workbooks](#books-workbooks).
+
+**API call format**
+<br>https://public.tableau.com/public/apis/workbooks?profileName= + **Your Tableau Public Username** + &start=0&count=50&visibility=HIDDEN
+
+**Example API call** (when signed in)
+<br>[https://public.tableau.com/public/apis/workbooks?profileName=wjsutton&start=0&count=50&visibility=HIDDEN](https://public.tableau.com/public/apis/workbooks?profileName=wjsutton&start=0&count=50&visibility=HIDDEN)
+
+**Python example**
+```python
+with tableau_public_session() as page:
+    status, hidden = call_api(page, '/public/apis/workbooks?profileName=wjsutton&start=0&count=50&visibility=HIDDEN')
+    for workbook in hidden['contents']:
+        print(workbook['title'], workbook['workbookRepoUrl'])
+```
+
+### :arrows_counterclockwise: Request Extract Refresh
+
+**API call output**
+<br>Requests a data refresh for one of your workbooks, the same as the "Request Update" button on a viz. This works for data sources Tableau Public can connect to, e.g. Google Sheets, not local files.
+
+Check `isServerRefreshable` in the `extractInfo` of [Workbook Details](#books-workbook-details) to see if a workbook can be refreshed, and `refreshEnqueued` to see if a refresh has been requested.
+
+**API call format**
+<br>POST https://public.tableau.com/profile/api/workbook/request_extract_refresh
+<br>with the **Workbook Repo Url** in quotes as the body, e.g. `"BeanzMeanzHeinz"`
+
+**Python example**
+```python
+import json
+
+with tableau_public_session() as page:
+    status, data = call_api(page, '/profile/api/workbook/request_extract_refresh', 'POST', json.dumps('BeanzMeanzHeinz'))
+    print(status)  # 200 = refresh requested
+```
 
 ## :file_cabinet: Archive - Deprecated APIs
 
